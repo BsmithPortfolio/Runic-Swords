@@ -54,7 +54,7 @@ namespace RuneSwords
                     MinStationLevel = 4,
                     Requirements = new[]
                     {
-                        new RequirementConfig {Item = "Obsidian", Amount = 100},
+                        new RequirementConfig {Item = "Obsidian", Amount = 20, AmountPerLevel = 5},
                         new RequirementConfig {Item = "Iron", Amount = 50, AmountPerLevel = 25},
                         new RequirementConfig {Item = "FreezeGland", Amount = 25, AmountPerLevel = 10},
                         new RequirementConfig {Item = "DragonTear", Amount = 10, AmountPerLevel = 5}
@@ -81,7 +81,7 @@ namespace RuneSwords
                         new RequirementConfig {Item = "Flametal", Amount = 100, AmountPerLevel = 50},
                         new RequirementConfig {Item = "SurtlingCore", Amount = 75, AmountPerLevel = 35},
                         new RequirementConfig {Item = "Iron", Amount = 50, AmountPerLevel = 25},
-                        new RequirementConfig {Item = "Obsidian", Amount = 50, AmountPerLevel = 25},
+                        new RequirementConfig {Item = "Obsidian", Amount = 20, AmountPerLevel = 5},
                     }
                 });
             ItemManager.Instance.AddItem(firerune);
@@ -101,7 +101,7 @@ namespace RuneSwords
                     MinStationLevel = 4,
                     Requirements = new[]
                     {
-                        new RequirementConfig {Item = "Obsidian", Amount = 100, AmountPerLevel = 50},
+                        new RequirementConfig {Item = "Obsidian", Amount = 50, AmountPerLevel = 10},
                         new RequirementConfig {Item = "Ooze", Amount = 50, AmountPerLevel = 25},
                         new RequirementConfig {Item = "Iron", Amount = 50, AmountPerLevel = 25},
                         new RequirementConfig {Item = "Guck", Amount = 25, AmountPerLevel = 10}
@@ -124,7 +124,7 @@ namespace RuneSwords
                     MinStationLevel = 4,
                     Requirements = new[]
                     {
-                        new RequirementConfig {Item = "Obsidian", Amount = 100, AmountPerLevel = 50},
+                        new RequirementConfig {Item = "Obsidian", Amount = 20, AmountPerLevel = 5},
                         new RequirementConfig {Item = "Iron", Amount = 50, AmountPerLevel = 25},
                         new RequirementConfig {Item = "TrophyEikthyr", Amount = 5, AmountPerLevel = 1},
                         new RequirementConfig {Item = "HardAntler", Amount = 25, AmountPerLevel = 10}
