@@ -88,6 +88,7 @@
     <None Include="Package\README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\Translations\English\" />
     <Folder Include="Package\plugins\" />
   </ItemGroup>
   <ItemGroup>
