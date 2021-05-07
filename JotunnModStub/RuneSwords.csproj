@@ -83,12 +83,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="AssetsEmbedded\runeswords" />
+    <EmbeddedResource Include="AssetsEmbedded\runeswords" />
+    <None Include="Assets\Translations\English\RuneSwords.json" />
     <None Include="packages.config" />
     <None Include="Package\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\Translations\English\" />
     <Folder Include="Package\plugins\" />
   </ItemGroup>
   <ItemGroup>
