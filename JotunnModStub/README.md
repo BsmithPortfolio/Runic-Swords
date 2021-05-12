@@ -19,6 +19,11 @@ Changed from artisan table to forge cuz for some reason it doesn't show up at ar
 
 Changed back to artisan table and added build table extension pieces to allow you to actually level your weapon ;) 
 
+**V0.0.4**
+idk i missed a ver
+
+**V0.0.5***
+Fixed the piece placement of runic upgrades for crafting table
 
 
 These swords were meant for more "hard" servers yes the crafting reqs are alot yes they are OP no I wont turn them down 
