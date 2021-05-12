@@ -11,6 +11,21 @@ Thnks Jotunn for the heavy lifting I just made some assets ;)
 **V0.0.1**
 Initial Alpha Release
 
+**V0.0.2**
+
+Changed from artisan table to forge cuz for some reason it doesn't show up at artisan table?
+
+**V0.0.3**
+
+Changed back to artisan table and added build table extension pieces to allow you to actually level your weapon ;) 
+
+**V0.0.4**
+idk i missed a ver
+
+**V0.0.5***
+Fixed the piece placement of runic upgrades for crafting table
+
+
 These swords were meant for more "hard" servers yes the crafting reqs are alot yes they are OP no I wont turn them down 
 
 TLDR 
