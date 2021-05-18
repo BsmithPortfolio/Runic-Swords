@@ -74,6 +74,30 @@ namespace RuneSwords
         private ConfigEntry<int> spiritperfrost;
         private ConfigEntry<int> tierfrost;
         private ConfigEntry<int> attackforcefrost;
+        private ConfigEntry<int> damagefire;
+        private ConfigEntry<int> bluntfire;
+        private ConfigEntry<int> slashvalfire;
+        private ConfigEntry<int> piercefire;
+        private ConfigEntry<int> chopfire;
+        private ConfigEntry<int> pickaxefire;
+        private ConfigEntry<int> firefire;
+        private ConfigEntry<int> frostfire;
+        private ConfigEntry<int> lightningfire;
+        private ConfigEntry<int> poisonfire;
+        private ConfigEntry<int> spiritfire;
+        private ConfigEntry<int> damageperfire;
+        private ConfigEntry<int> bluntperfire;
+        private ConfigEntry<int> slashperfire;
+        private ConfigEntry<int> pierceperfire;
+        private ConfigEntry<int> chopperfire;
+        private ConfigEntry<int> pickaxeperfire;
+        private ConfigEntry<int> fireperfire;
+        private ConfigEntry<int> frostperfire;
+        private ConfigEntry<int> lightningperfire;
+        private ConfigEntry<int> poisonperfire;
+        private ConfigEntry<int> spiritperfire;
+        private ConfigEntry<int> tierfire;
+        private ConfigEntry<int> attackforcefire;
 
         private void Awake()
         {
@@ -165,6 +189,31 @@ namespace RuneSwords
                         new RequirementConfig {Item = "Obsidian", Amount = ObsidianFire.Value, AmountPerLevel = 5},
                     }
                 });
+            var itemthing = firerune.ItemDrop;
+            itemthing.m_itemData.m_shared.m_damages.m_damage = damagefire.Value;
+            itemthing.m_itemData.m_shared.m_damages.m_blunt = bluntfire.Value;
+            itemthing.m_itemData.m_shared.m_toolTier = tierfire.Value;
+            itemthing.m_itemData.m_shared.m_damages.m_slash = slashvalfire.Value;
+            itemthing.m_itemData.m_shared.m_damages.m_pierce = piercefire.Value;
+            itemthing.m_itemData.m_shared.m_damages.m_chop = chopfire.Value;
+            itemthing.m_itemData.m_shared.m_damages.m_pickaxe = pickaxefire.Value;
+            itemthing.m_itemData.m_shared.m_damages.m_fire = firefire.Value;
+            itemthing.m_itemData.m_shared.m_damages.m_frost = frostfire.Value;
+            itemthing.m_itemData.m_shared.m_damages.m_lightning = lightningfire.Value;
+            itemthing.m_itemData.m_shared.m_damages.m_poison = poisonfire.Value;
+            itemthing.m_itemData.m_shared.m_damages.m_spirit = spiritfire.Value;
+            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperfire.Value;
+            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperfire.Value;
+            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperfire.Value;
+            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperfire.Value;
+            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperfire.Value;
+            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperfire.Value;
+            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperfire.Value;
+            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperfire.Value;
+            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperfire.Value;
+            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperfire.Value;
+            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperfire.Value;
+            itemthing.m_itemData.m_shared.m_attackForce = attackforcefire.Value;
             ItemManager.Instance.AddItem(firerune);
         }
 
@@ -363,7 +412,7 @@ namespace RuneSwords
 
 
 
-            //Damage Values 
+            //Damage Values ice
             
             damagefrost = Config.Bind("Windlass Damage", "Overall Damage", 250, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             bluntfrost = Config.Bind("Windlass Damage", "Blunt Damge", 50, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
@@ -393,6 +442,40 @@ namespace RuneSwords
 
             tierfrost = Config.Bind("Windlass", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             attackforcefrost = Config.Bind("Windlass", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            //damage values fire
+            damagefire = Config.Bind("Windlass Damage", "Overall Damage", 250, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            bluntfire = Config.Bind("Windlass Damage", "Blunt Damge", 50, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            slashvalfire = Config.Bind("Windlass Damage", "Slash Damage", 500, new ConfigDescription("Slash Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            piercefire = Config.Bind("Windlass Damage", "Pierce Damge", 400, new ConfigDescription("Pierce Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            chopfire = Config.Bind("Windlass Damage", "Chop Damage", 950, new ConfigDescription("Chop Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            pickaxefire = Config.Bind("Windlass Damage", "PickAxe Damage", 1500, new ConfigDescription("Pickaxe Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            firefire = Config.Bind("Windlass Damage", "Fire Damage", 0, new ConfigDescription("Fire Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            frostfire = Config.Bind("Windlass Damage", "Frost Damage", 1500, new ConfigDescription("Frost Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            lightningfire = Config.Bind("Windlass Damage", "Lightning Damage", 1500, new ConfigDescription("Lightning Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            poisonfire = Config.Bind("Windlass Damage", "Poison Damage", 500, new ConfigDescription("Poison Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            spiritfire = Config.Bind("Windlass Damage", "Spirit Damage", 1500, new ConfigDescription("Spirit Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            damageperfire = Config.Bind("Per Level", "Overall Damage Per Level", 50, new ConfigDescription("Overall Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            bluntperfire = Config.Bind("Per Level", "Blunt Damage Per Level", 50, new ConfigDescription("Blunt Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            slashperfire = Config.Bind("Per Level", "Slash Damage Per Level", 50, new ConfigDescription("Slash Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            pierceperfire = Config.Bind("Per Level", "Pierce Damage Per Level", 50, new ConfigDescription("Pierce Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            chopperfire = Config.Bind("Per Level", "Chop Damage Per Level", 50, new ConfigDescription("Chop Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            pickaxeperfire = Config.Bind("Per Level", "PickAxe Damage Per Level", 50, new ConfigDescription("PickAxe Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            fireperfire = Config.Bind("Per Level", "Fire Damage Per Level", 50, new ConfigDescription("Fire Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            frostperfire = Config.Bind("Per Level", "Frost Damage Per Level", 50, new ConfigDescription("Frost Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            lightningperfire = Config.Bind("Per Level", "Lightning Damage Per Level", 50, new ConfigDescription("Lightning Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            poisonperfire = Config.Bind("Per Level", "Poison Damage Per Level", 50, new ConfigDescription("Poison Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            spiritperfire = Config.Bind("Per Level", "Spirit Damage Per Level", 50, new ConfigDescription("Spirit Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            tierfire = Config.Bind("Windlass", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            attackforcefire = Config.Bind("Windlass", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            //damage values lightning
 
         }
 
