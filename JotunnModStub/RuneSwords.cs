@@ -151,6 +151,7 @@ namespace RuneSwords
         private EffectList effectblocked;
         private EffectList trigger;
         private EffectList trailfx;
+        private EffectList buildsounds;
 
         private void Awake()
         {
@@ -176,12 +177,20 @@ namespace RuneSwords
                 var sfxswing = PrefabManager.Cache.GetPrefab<GameObject>("sfx_sword_swing");
                 var camshakeblock = PrefabManager.Cache.GetPrefab<GameObject>("fx_block_camshake");
 
+
+
+                var sfxhammer = PrefabManager.Cache.GetPrefab<GameObject>("sfx_build_hammer_wood");
+                var vfx_Place_wood_pole = PrefabManager.Cache.GetPrefab<GameObject>("vfx_Place_wood_pole");
+
+
+                buildsounds = new EffectList { m_effectPrefabs = new EffectList.EffectData[2] { new EffectList.EffectData { m_prefab = sfxhammer }, new EffectList.EffectData { m_prefab = vfx_Place_wood_pole } } };
+
                 effecthit = new EffectList { m_effectPrefabs = new EffectList.EffectData[3] { new EffectList.EffectData { m_prefab = hitsparks, m_enabled = true }, new EffectList.EffectData { m_prefab = sfxhitsword, m_enabled = true }, new EffectList.EffectData { m_prefab = camshake, m_enabled = true } } };
                 effectblocked = new EffectList { m_effectPrefabs = new EffectList.EffectData[3] { new EffectList.EffectData { m_prefab = sfxblocked }, new EffectList.EffectData { m_prefab = vfxblock, m_enabled = true }, new EffectList.EffectData { m_prefab = camshakeblock, m_enabled = true } } };
                 trigger = new EffectList { m_effectPrefabs = new EffectList.EffectData[1] { new EffectList.EffectData { m_prefab = camshake, m_enabled = true } } };
                 trailfx = new EffectList { m_effectPrefabs = new EffectList.EffectData[1] { new EffectList.EffectData { m_prefab = sfxswing, m_enabled = true } } };
 
-                Jotunn.Logger.LogMessage("Loaded SFX");
+                Jotunn.Logger.LogMessage("Loaded Game VFX and SFX");
                 Jotunn.Logger.LogMessage("Loading Swords");
                 ConfigDeploy();
                 LoadAssets();
@@ -433,6 +442,8 @@ namespace RuneSwords
                     }
 
                 });
+            var piece = ext1.Piece;
+            piece.m_placeEffect = buildsounds;
             PieceManager.Instance.AddPiece(ext1);
         }
         public void piece_exentension1()
@@ -452,6 +463,8 @@ namespace RuneSwords
                     }
 
                 });
+            var piece1 = ext2.Piece;
+            piece1.m_placeEffect = buildsounds; 
             PieceManager.Instance.AddPiece(ext2);
         }
         public void piece_exentension2()
@@ -471,6 +484,8 @@ namespace RuneSwords
                     }
 
                 });
+            var sfx = ext3.Piece;
+            sfx.m_placeEffect = buildsounds;
             PieceManager.Instance.AddPiece(ext3);
         }
         private void piece_exentension3()
@@ -490,6 +505,8 @@ namespace RuneSwords
                     }
 
                 });
+            var ext4thing = ext4.Piece;
+            ext4thing.m_placeEffect = buildsounds;
             PieceManager.Instance.AddPiece(ext4);
         }
         private void piece_exentension4()
@@ -509,6 +526,8 @@ namespace RuneSwords
                     }
 
                 });
+            var ext5thing = ext5.Piece;
+            ext5thing.m_placeEffect = buildsounds;
             PieceManager.Instance.AddPiece(ext5);
         } 
         private void piece_exentension5()
@@ -528,6 +547,8 @@ namespace RuneSwords
                     }
 
                 });
+            var ext6thing = ext6.Piece;
+            ext6thing.m_placeEffect = buildsounds;
             PieceManager.Instance.AddPiece(ext6);
         }
 
