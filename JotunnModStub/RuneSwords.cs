@@ -154,18 +154,9 @@ namespace RuneSwords
 
         private void Awake()
         {
-            ConfigDeploy();
-            LoadAssets();
-            IceSword();
-            FireSword();
-            PoisonSword();
-            LightningSword();
-            piece_exentension();
-            piece_exentension1();
-            piece_exentension2();
-            piece_exentension3();
-            piece_exentension4();
-            piece_exentension5();
+            
+           
+            ItemManager.OnVanillaItemsAvailable += LoadgameFabs;
         }
 
         public void LoadAssets()
@@ -185,19 +176,34 @@ namespace RuneSwords
                 var sfxswing = PrefabManager.Cache.GetPrefab<GameObject>("sfx_sword_swing");
                 var camshakeblock = PrefabManager.Cache.GetPrefab<GameObject>("fx_block_camshake");
 
-                effecthit = new EffectList { m_effectPrefabs = new EffectList.EffectData[3] { new EffectList.EffectData { m_prefab = hitsparks }, new EffectList.EffectData { m_prefab = sfxhitsword }, new EffectList.EffectData { m_prefab = camshake } } };
-                effectblocked = new EffectList { m_effectPrefabs = new EffectList.EffectData[3] { new EffectList.EffectData { m_prefab = sfxblocked }, new EffectList.EffectData { m_prefab = vfxblock }, new EffectList.EffectData { m_prefab = camshakeblock } } };
-                trigger = new EffectList { m_effectPrefabs = new EffectList.EffectData[1] { new EffectList.EffectData { m_prefab = camshake } } };
-                trailfx = new EffectList { m_effectPrefabs = new EffectList.EffectData[1] { new EffectList.EffectData { m_prefab = sfxswing } } };
+                effecthit = new EffectList { m_effectPrefabs = new EffectList.EffectData[3] { new EffectList.EffectData { m_prefab = hitsparks, m_enabled = true }, new EffectList.EffectData { m_prefab = sfxhitsword, m_enabled = true }, new EffectList.EffectData { m_prefab = camshake, m_enabled = true } } };
+                effectblocked = new EffectList { m_effectPrefabs = new EffectList.EffectData[3] { new EffectList.EffectData { m_prefab = sfxblocked }, new EffectList.EffectData { m_prefab = vfxblock, m_enabled = true }, new EffectList.EffectData { m_prefab = camshakeblock, m_enabled = true } } };
+                trigger = new EffectList { m_effectPrefabs = new EffectList.EffectData[1] { new EffectList.EffectData { m_prefab = camshake, m_enabled = true } } };
+                trailfx = new EffectList { m_effectPrefabs = new EffectList.EffectData[1] { new EffectList.EffectData { m_prefab = sfxswing, m_enabled = true } } };
 
-                }
+                Jotunn.Logger.LogMessage("Loaded SFX");
+                Jotunn.Logger.LogMessage("Loading Swords");
+                ConfigDeploy();
+                LoadAssets();
+                IceSword();
+                FireSword();
+                PoisonSword();
+                LightningSword();
+                piece_exentension();
+                piece_exentension1();
+                piece_exentension2();
+                piece_exentension3();
+                piece_exentension4();
+                piece_exentension5();
+
+            }
             catch (Exception ex)
             {
                 Jotunn.Logger.LogError($"Error while adding cloned item: {ex.Message}");
             }
             finally
             {
-
+                ItemManager.OnVanillaItemsAvailable -= LoadgameFabs;
             }
         }
         public void IceSword()
