@@ -11,6 +11,7 @@ using Jotunn.Configs;
 using Jotunn.Managers;
 using Jotunn.Utils;
 using BepInEx.Configuration;
+using System;
 
 namespace RuneSwords
 {
@@ -146,6 +147,10 @@ namespace RuneSwords
         private ConfigEntry<int> firelight;
         private ConfigEntry<int> frostlight;
         private ConfigEntry<int> lightninglight;
+        private EffectList effecthit;
+        private EffectList effectblocked;
+        private EffectList trigger;
+        private EffectList trailfx;
 
         private void Awake()
         {
@@ -168,6 +173,33 @@ namespace RuneSwords
             runeassets = AssetUtils.LoadAssetBundleFromResources("runeswords", typeof(RuneSwords).Assembly);
         }
 
+        public void LoadgameFabs()
+        {
+            try
+            {
+                var hitsparks = PrefabManager.Cache.GetPrefab<GameObject>("vfx_HitSparks");
+                var sfxhitsword = PrefabManager.Cache.GetPrefab<GameObject>("sfx_sword_hit");
+                var camshake = PrefabManager.Cache.GetPrefab<GameObject>("fx_hit_camshake");
+                var sfxblocked = PrefabManager.Cache.GetPrefab<GameObject>("sfx_metal_blocked");
+                var vfxblock = PrefabManager.Cache.GetPrefab<GameObject>("vfx_blocked");
+                var sfxswing = PrefabManager.Cache.GetPrefab<GameObject>("sfx_sword_swing");
+                var camshakeblock = PrefabManager.Cache.GetPrefab<GameObject>("fx_block_camshake");
+
+                effecthit = new EffectList { m_effectPrefabs = new EffectList.EffectData[3] { new EffectList.EffectData { m_prefab = hitsparks }, new EffectList.EffectData { m_prefab = sfxhitsword }, new EffectList.EffectData { m_prefab = camshake } } };
+                effectblocked = new EffectList { m_effectPrefabs = new EffectList.EffectData[3] { new EffectList.EffectData { m_prefab = sfxblocked }, new EffectList.EffectData { m_prefab = vfxblock }, new EffectList.EffectData { m_prefab = camshakeblock } } };
+                trigger = new EffectList { m_effectPrefabs = new EffectList.EffectData[1] { new EffectList.EffectData { m_prefab = camshake } } };
+                trailfx = new EffectList { m_effectPrefabs = new EffectList.EffectData[1] { new EffectList.EffectData { m_prefab = sfxswing } } };
+
+                }
+            catch (Exception ex)
+            {
+                Jotunn.Logger.LogError($"Error while adding cloned item: {ex.Message}");
+            }
+            finally
+            {
+
+            }
+        }
         public void IceSword()
         {
             var icefab = runeassets.LoadAsset<GameObject>("IceRuneSword");
@@ -213,6 +245,10 @@ namespace RuneSwords
             itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperfrost.Value;
             itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperfrost.Value;
             itemDrop.m_itemData.m_shared.m_attackForce = attackforcefrost.Value;
+            itemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            itemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            itemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            itemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
             ItemManager.Instance.AddItem(icerune);
 
         }
@@ -262,6 +298,10 @@ namespace RuneSwords
             itemthing.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperfire.Value;
             itemthing.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperfire.Value;
             itemthing.m_itemData.m_shared.m_attackForce = attackforcefire.Value;
+            itemthing.m_itemData.m_shared.m_hitEffect = effecthit;
+            itemthing.m_itemData.m_shared.m_blockEffect = effectblocked;
+            itemthing.m_itemData.m_shared.m_triggerEffect = trigger;
+            itemthing.m_itemData.m_shared.m_trailStartEffect = trailfx;
             ItemManager.Instance.AddItem(firerune);
         }
 
@@ -310,6 +350,10 @@ namespace RuneSwords
             posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperposion.Value;
             posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperposion.Value;
             posiondrop.m_itemData.m_shared.m_attackForce = attackforceposion.Value;
+            posiondrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            posiondrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            posiondrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            posiondrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
             ItemManager.Instance.AddItem(poison);
         }
 
@@ -358,6 +402,11 @@ namespace RuneSwords
             lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperlight.Value;
             lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperlight.Value;
             lightningdrop.m_itemData.m_shared.m_attackForce = attackforcelight.Value;
+            lightningdrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            lightningdrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            lightningdrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            lightningdrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+
             ItemManager.Instance.AddItem(llightrune);
         }
          

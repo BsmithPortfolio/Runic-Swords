@@ -25,6 +25,8 @@ idk i missed a ver
 **V0.0.5***
 Fixed the piece placement of runic upgrades for crafting table
 
+**V0.0.6***
+Fully configurable and added some shiny light things to the swords
 
 These swords were meant for more "hard" servers yes the crafting reqs are alot yes they are OP no I wont turn them down 
 
