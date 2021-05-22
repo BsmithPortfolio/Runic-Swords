@@ -29,26 +29,20 @@ namespace RuneSwords
         public ConfigEntry<bool> FireEnable;
         public ConfigEntry<bool> FrostEnable;
         public ConfigEntry<bool> PoisonEnable;
-
         public ConfigEntry<int> ObsidianFrost;
         public ConfigEntry<int> ObsidianFire;
         public ConfigEntry<int> ObsidianLight;
         public ConfigEntry<int> ObsidianPoison;
-
         public ConfigEntry<int> IronFrost;
         public ConfigEntry<int> IronFire;
         public ConfigEntry<int> IronLight;
         public ConfigEntry<int> IronPoison;
-
         public ConfigEntry<int> IceFreezeGland;
         public ConfigEntry<int> DragonTear;
-
         public ConfigEntry<int> FireFlametal;
         public ConfigEntry<int> FireSurtling;
-
         public ConfigEntry<int> PoisonOoze;
         public ConfigEntry<int> PoisonGuck;
-
         public ConfigEntry<int> Trophy;
         public ConfigEntry<int> Antler;
         private ConfigEntry<int> damagefrost;
