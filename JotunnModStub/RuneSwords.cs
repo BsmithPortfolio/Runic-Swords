@@ -149,14 +149,35 @@ namespace RuneSwords
 
         private void Awake()
         {
-            
-           
+
+            ConfigDeploy();
+            LoadAssets();
             ItemManager.OnVanillaItemsAvailable += LoadgameFabs;
+            SynchronizationManager.Instance.ConfigurationSynchronized += LateLoad;
         }
 
         public void LoadAssets()
         {
             runeassets = AssetUtils.LoadAssetBundleFromResources("runeswords", typeof(RuneSwords).Assembly);
+        }
+
+        private void LateLoad()
+        {
+            try { 
+            Jotunn.Logger.LogMessage("Loading Swords");
+            IceSword();
+            FireSword();
+            PoisonSword();
+            LightningSword();
+            }
+            catch (Exception ex)
+            {
+                Jotunn.Logger.LogError($"Error while adding cloned item: {ex.Message}");
+            }
+            finally
+            {
+                SynchronizationManager.Instance.ConfigurationSynchronized -= LateLoad;
+            }
         }
 
         public void LoadgameFabs()
@@ -185,13 +206,8 @@ namespace RuneSwords
                 trailfx = new EffectList { m_effectPrefabs = new EffectList.EffectData[1] { new EffectList.EffectData { m_prefab = sfxswing, m_enabled = true } } };
 
                 Jotunn.Logger.LogMessage("Loaded Game VFX and SFX");
-                Jotunn.Logger.LogMessage("Loading Swords");
-                ConfigDeploy();
-                LoadAssets();
-                IceSword();
-                FireSword();
-                PoisonSword();
-                LightningSword();
+
+                Jotunn.Logger.LogMessage("Loading Runestones");
                 piece_exentension();
                 piece_exentension1();
                 piece_exentension2();
@@ -259,6 +275,7 @@ namespace RuneSwords
             itemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
             itemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
             ItemManager.Instance.AddItem(icerune);
+            ObjectDB.instance.m_items.Add(icefab);
 
         }
 
