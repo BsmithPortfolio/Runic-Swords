@@ -22,7 +22,7 @@ namespace RuneSwords
     {
         public const string PluginGUID = "com.zarboz.runicswords";
         public const string PluginName = "RuneSwords";
-        public const string PluginVersion = "0.0.6";
+        public const string PluginVersion = "0.0.7";
         private AssetBundle runeassets;
 
         public ConfigEntry<bool> LightEnable;
