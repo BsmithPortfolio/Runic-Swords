@@ -149,9 +149,26 @@ namespace RuneSwords
 
         private void Awake()
         {
-            
-           
+
+            ConfigDeploy();
+            LoadAssets();
+
+            SynchronizationManager.OnConfigurationSynchronized += (obj, attr) =>
+            {
+                if (attr.InitialSynchronization)
+                {
+                    Jotunn.Logger.LogMessage("Initial Config sync event received");
+                    LoadSwords();
+                }
+                else
+                {
+                    Jotunn.Logger.LogMessage("Config sync event received");
+                    LoadSwords();
+                }
+            };
             ItemManager.OnVanillaItemsAvailable += LoadgameFabs;
+
+
         }
 
         public void LoadAssets()
@@ -159,6 +176,64 @@ namespace RuneSwords
             runeassets = AssetUtils.LoadAssetBundleFromResources("runeswords", typeof(RuneSwords).Assembly);
         }
 
+        private void LoadSwords()
+        {
+
+            //todo split this into loading cfgs vs loading prefabs. So cfgs load and apply on sync as well.
+
+            //Apply Ice Sword CFG
+            var icecfg = PrefabManager.Instance.GetPrefab("IceRuneSword").GetComponent<ItemDrop>();
+            this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage", out var dmgval);
+            icecfg.m_itemData.m_shared.m_damages.m_damage = (int)dmgval.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Blunt Damge", out var bluntval);
+            icecfg.m_itemData.m_shared.m_toolTier = (int)bluntval.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Slash Damage", out var slashval);
+            icecfg.m_itemData.m_shared.m_damages.m_slash = (int)slashval.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Pierce Damge", out var peirceval);
+            icecfg.m_itemData.m_shared.m_damages.m_pierce = (int)peirceval.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage", out var chopval);
+            icecfg.m_itemData.m_shared.m_damages.m_chop = (int)chopval.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "PickAxe Damage", out var pickaxeval);
+            icecfg.m_itemData.m_shared.m_damages.m_pickaxe = (int)pickaxeval.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Fire Damage", out var fireprval);
+            icecfg.m_itemData.m_shared.m_damages.m_fire = (int)fireprval.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Frost Damage", out var forstprval);
+            icecfg.m_itemData.m_shared.m_damages.m_frost = (int)forstprval.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Lightning Damage", out var lghtprval);
+            icecfg.m_itemData.m_shared.m_damages.m_lightning = (int)lghtprval.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Poison Damage", out var icepsnval);
+            icecfg.m_itemData.m_shared.m_damages.m_poison = (int)icepsnval.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Spirit Damage", out var icesprval);
+            icecfg.m_itemData.m_shared.m_damages.m_spirit = (int)icesprval.Value;
+
+
+            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
+            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageperfrost.Value;
+            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
+            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntperfrost.Value;
+            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
+            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashperfrost.Value;
+            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
+            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceperfrost.Value;
+            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
+            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopperfrost.Value;
+            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
+            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeperfrost.Value;
+            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
+            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireperfrost.Value;
+            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
+            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostperfrost.Value;
+            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
+            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningperfrost.Value;
+            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
+            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonperfrost.Value;
+            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
+            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritperfrost.Value;
+            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
+            //icecfg.m_itemData.m_shared.m_attackForce = (int)attackforcefrost.Value;
+            
+
+        }
         public void LoadgameFabs()
         {
             try
@@ -170,8 +245,6 @@ namespace RuneSwords
                 var vfxblock = PrefabManager.Cache.GetPrefab<GameObject>("vfx_blocked");
                 var sfxswing = PrefabManager.Cache.GetPrefab<GameObject>("sfx_sword_swing");
                 var camshakeblock = PrefabManager.Cache.GetPrefab<GameObject>("fx_block_camshake");
-
-
 
                 var sfxhammer = PrefabManager.Cache.GetPrefab<GameObject>("sfx_build_hammer_wood");
                 var vfx_Place_wood_pole = PrefabManager.Cache.GetPrefab<GameObject>("vfx_Place_wood_pole");
@@ -186,12 +259,11 @@ namespace RuneSwords
 
                 Jotunn.Logger.LogMessage("Loaded Game VFX and SFX");
                 Jotunn.Logger.LogMessage("Loading Swords");
-                ConfigDeploy();
-                LoadAssets();
                 IceSword();
                 FireSword();
                 PoisonSword();
                 LightningSword();
+                Jotunn.Logger.LogMessage("Loading Runestones");
                 piece_exentension();
                 piece_exentension1();
                 piece_exentension2();
@@ -223,41 +295,42 @@ namespace RuneSwords
                     MinStationLevel = 2,
                     Requirements = new[]
                     {
-                        new RequirementConfig {Item = "Obsidian", Amount = ObsidianFrost.Value, AmountPerLevel = 5},
-                        new RequirementConfig {Item = "Iron", Amount = IronFrost.Value, AmountPerLevel = 25},
-                        new RequirementConfig {Item = "FreezeGland", Amount = IceFreezeGland.Value, AmountPerLevel = 10},
-                        new RequirementConfig {Item = "DragonTear", Amount = DragonTear.Value, AmountPerLevel = 5}
+                        new RequirementConfig {Item = "Obsidian", Amount = (int)ObsidianFrost.Value, AmountPerLevel = 5},
+                        new RequirementConfig {Item = "Iron", Amount = (int)IronFrost.Value, AmountPerLevel = 25},
+                        new RequirementConfig {Item = "FreezeGland", Amount = (int)IceFreezeGland.Value, AmountPerLevel = 10},
+                        new RequirementConfig {Item = "DragonTear", Amount = (int)DragonTear.Value, AmountPerLevel = 5}
                     }
                 });
             var itemDrop = icerune.ItemDrop;
-            itemDrop.m_itemData.m_shared.m_damages.m_damage = damagefrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntfrost.Value;
-            itemDrop.m_itemData.m_shared.m_toolTier = tierfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_slash = slashvalfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_pierce = piercefrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_chop = chopfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxefrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_fire = firefrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_frost = frostfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_lightning = lightningfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_poison = poisonfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_attackForce = attackforcefrost.Value;
+            itemDrop.m_itemData.m_shared.m_damages.m_damage = (int)damagefrost.Value;
+            itemDrop.m_itemData.m_shared.m_damages.m_blunt = (int)bluntfrost.Value;
+            itemDrop.m_itemData.m_shared.m_toolTier = (int)tierfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damages.m_slash = (int)slashvalfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damages.m_pierce = (int)piercefrost.Value;
+            itemDrop.m_itemData.m_shared.m_damages.m_chop = (int)chopfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damages.m_pickaxe = (int)pickaxefrost.Value;
+            itemDrop.m_itemData.m_shared.m_damages.m_fire = (int)firefrost.Value;
+            itemDrop.m_itemData.m_shared.m_damages.m_frost = (int)frostfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damages.m_lightning = (int)lightningfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damages.m_poison = (int)poisonfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damages.m_spirit = (int)spiritfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageperfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntperfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashperfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceperfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopperfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeperfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireperfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostperfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningperfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonperfrost.Value;
+            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritperfrost.Value;
+            itemDrop.m_itemData.m_shared.m_attackForce = (int)attackforcefrost.Value;
             itemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
             itemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
             itemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
             itemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+
             ItemManager.Instance.AddItem(icerune);
 
         }
