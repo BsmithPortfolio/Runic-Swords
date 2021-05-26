@@ -382,17 +382,22 @@ namespace RuneSwords
             #endregion
 
             #region Recipe Loadup
-            this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage", out var dmgval);
-            icecfg.m_itemData.m_shared.m_damages.m_damage = (int)dmgval.Value;
+            var lghtrecipe = PrefabManager.Instance.GetPrefab("LightingRuneSword").GetComponent<Recipe>(); 
+            this.Config.TryGetEntry<bool>("Lightning Sword", "Enable", out var enable);
+            lghtrecipe.m_enabled = (bool)enable.Value;
 
-            this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage", out var dmgval1);
-            firecfg.m_itemData.m_shared.m_damages.m_damage = (int)dmgval1.Value;
+            var firerecipe = PrefabManager.Instance.GetPrefab("FireRuneSword").GetComponent<Recipe>();
+            this.Config.TryGetEntry<bool>("Lightning Sword", "Enable", out var enable1);
+            firerecipe.m_enabled = (bool)enable1.Value;
 
-            this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage", out var dmgval2);
-            psncfg.m_itemData.m_shared.m_damages.m_damage = (int)dmgval2.Value;
+            var poisonrecipe = PrefabManager.Instance.GetPrefab("PoisonRuneSword").GetComponent<Recipe>();
+            this.Config.TryGetEntry<bool>("Lightning Sword", "Enable", out var enable2);
+            poisonrecipe.m_enabled = (bool)enable2.Value;
 
-            this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage", out var dmgval3);
-            lghtngcfg.m_itemData.m_shared.m_damages.m_damage = (int)dmgval3.Value;
+            var frostrecipe = PrefabManager.Instance.GetPrefab("FrostRuneSword").GetComponent<Recipe>();
+            this.Config.TryGetEntry<bool>("Lightning Sword", "Enable", out var enable3);
+            frostrecipe.m_enabled = (bool)enable3.Value;
+
 
             #endregion
         }
