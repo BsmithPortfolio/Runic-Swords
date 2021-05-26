@@ -180,7 +180,7 @@ namespace RuneSwords
         {
 
             //todo split this into loading cfgs vs loading prefabs. So cfgs load and apply on sync as well.
-
+            #region Ice Sword Config
             //Apply Ice Sword CFG
             var icecfg = PrefabManager.Instance.GetPrefab("IceRuneSword").GetComponent<ItemDrop>();
             this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage", out var dmgval);
@@ -205,34 +205,181 @@ namespace RuneSwords
             icecfg.m_itemData.m_shared.m_damages.m_poison = (int)icepsnval.Value;
             this.Config.TryGetEntry<int>("Frost Sword", "Spirit Damage", out var icesprval);
             icecfg.m_itemData.m_shared.m_damages.m_spirit = (int)icesprval.Value;
-
-
-            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
-            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageperfrost.Value;
-            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
-            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntperfrost.Value;
-            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
-            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashperfrost.Value;
-            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
-            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceperfrost.Value;
-            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
-            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopperfrost.Value;
-            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
-            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeperfrost.Value;
-            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
-            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireperfrost.Value;
-            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
-            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostperfrost.Value;
-            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
-            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningperfrost.Value;
-            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
-            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonperfrost.Value;
-            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
-            //icecfg.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritperfrost.Value;
-            //this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopval);
-            //icecfg.m_itemData.m_shared.m_attackForce = (int)attackforcefrost.Value;
-            
-
+            this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage Per Level", out var damageper);
+            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageper.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Blunt Damage Per Level", out var bluntper);
+            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntper.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Slash Damage Per Level", out var slashper);
+            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashper.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Pierce Damage Per Level", out var pierceper);
+            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceper.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopper);
+            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopper.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "PickAxe Damage Per Level", out var pickaxeper);
+            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeper.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Fire Damage Per Level", out var fireper);
+            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireper.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Frost Damage Per Level", out var frostper);
+            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostper.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Lightning Damage Per Level", out var lightningper);
+            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningper.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Poison Damage Per Level", out var poisonper);
+            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonper.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Spirit Damage Per Level", out var spiritper);
+            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritper.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Attack Force", out var attackforce);
+            icecfg.m_itemData.m_shared.m_attackForce = (int)attackforce.Value;
+            #endregion
+            #region Fire Sword Config
+            //fire sword config
+            var firecfg = PrefabManager.Instance.GetPrefab("FireRuneSword").GetComponent<ItemDrop>();
+            this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage", out var dmgval1);
+            firecfg.m_itemData.m_shared.m_damages.m_damage = (int)dmgval1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Blunt Damge", out var bluntval1);
+            firecfg.m_itemData.m_shared.m_toolTier = (int)bluntval1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Slash Damage", out var slashval1);
+            firecfg.m_itemData.m_shared.m_damages.m_slash = (int)slashval1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Pierce Damge", out var peirceval1);
+            firecfg.m_itemData.m_shared.m_damages.m_pierce = (int)peirceval1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage", out var chopval1);
+            firecfg.m_itemData.m_shared.m_damages.m_chop = (int)chopval1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "PickAxe Damage", out var pickaxeval1);
+            firecfg.m_itemData.m_shared.m_damages.m_pickaxe = (int)pickaxeval1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Fire Damage", out var fireprval1);
+            firecfg.m_itemData.m_shared.m_damages.m_fire = (int)fireprval1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Frost Damage", out var forstprval1);
+            firecfg.m_itemData.m_shared.m_damages.m_frost = (int)forstprval1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Lightning Damage", out var lghtprval1);
+            firecfg.m_itemData.m_shared.m_damages.m_lightning = (int)lghtprval1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Poison Damage", out var icepsnval1);
+            firecfg.m_itemData.m_shared.m_damages.m_poison = (int)icepsnval1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Spirit Damage", out var icesprval1);
+            firecfg.m_itemData.m_shared.m_damages.m_spirit = (int)icesprval1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage Per Level", out var damageper1);
+            firecfg.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageper1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Blunt Damage Per Level", out var bluntper1);
+            firecfg.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntper1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Slash Damage Per Level", out var slashper1);
+            firecfg.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashper1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Pierce Damage Per Level", out var pierceper1);
+            firecfg.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceper1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopper1);
+            firecfg.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopper1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "PickAxe Damage Per Level", out var pickaxeper1);
+            firecfg.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeper1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Fire Damage Per Level", out var fireper1);
+            firecfg.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireper1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Frost Damage Per Level", out var frostper1);
+            firecfg.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostper1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Lightning Damage Per Level", out var lightningper1);
+            firecfg.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningper1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Poison Damage Per Level", out var poisonper1);
+            firecfg.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonper1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Spirit Damage Per Level", out var spiritper1);
+            firecfg.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritper1.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Attack Force", out var attackforce1);
+            firecfg.m_itemData.m_shared.m_attackForce = (int)attackforce1.Value;
+            #endregion
+            #region Poison Sword Config
+            //poison sword config
+            var psncfg = PrefabManager.Instance.GetPrefab("PoisonRuneSword").GetComponent<ItemDrop>();
+            this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage", out var dmgval2);
+            psncfg.m_itemData.m_shared.m_damages.m_damage = (int)dmgval2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Blunt Damge", out var bluntval2);
+            psncfg.m_itemData.m_shared.m_toolTier = (int)bluntval2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Slash Damage", out var slashval2);
+            psncfg.m_itemData.m_shared.m_damages.m_slash = (int)slashval2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Pierce Damge", out var peirceval2);
+            psncfg.m_itemData.m_shared.m_damages.m_pierce = (int)peirceval2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage", out var chopval2);
+            psncfg.m_itemData.m_shared.m_damages.m_chop = (int)chopval2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "PickAxe Damage", out var pickaxeval2);
+            psncfg.m_itemData.m_shared.m_damages.m_pickaxe = (int)pickaxeval2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Fire Damage", out var fireprval2);
+            psncfg.m_itemData.m_shared.m_damages.m_fire = (int)fireprval2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Frost Damage", out var forstprval2);
+            psncfg.m_itemData.m_shared.m_damages.m_frost = (int)forstprval2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Lightning Damage", out var lghtprval2);
+            psncfg.m_itemData.m_shared.m_damages.m_lightning = (int)lghtprval2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Poison Damage", out var icepsnval2);
+            psncfg.m_itemData.m_shared.m_damages.m_poison = (int)icepsnval2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Spirit Damage", out var icesprval2);
+            psncfg.m_itemData.m_shared.m_damages.m_spirit = (int)icesprval2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage Per Level", out var damageper2);
+            psncfg.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageper2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Blunt Damage Per Level", out var bluntper2);
+            psncfg.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntper2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Slash Damage Per Level", out var slashper2);
+            psncfg.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashper2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Pierce Damage Per Level", out var pierceper2);
+            psncfg.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceper2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopper2);
+            psncfg.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopper2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "PickAxe Damage Per Level", out var pickaxeper2);
+            psncfg.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeper2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Fire Damage Per Level", out var fireper2);
+            psncfg.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireper2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Frost Damage Per Level", out var frostper2);
+            psncfg.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostper2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Lightning Damage Per Level", out var lightningper2);
+            psncfg.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningper2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Poison Damage Per Level", out var poisonper2);
+            psncfg.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonper2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Spirit Damage Per Level", out var spiritper2);
+            psncfg.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritper2.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Attack Force", out var attackforce2);
+            psncfg.m_itemData.m_shared.m_attackForce = (int)attackforce2.Value;
+            #endregion
+            #region Lightning Sword Config
+            //lightning sword config
+            var lghtngcfg = PrefabManager.Instance.GetPrefab("LightningRuneSword").GetComponent<ItemDrop>();
+            this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage", out var dmgval3);
+            lghtngcfg.m_itemData.m_shared.m_damages.m_damage = (int)dmgval3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Blunt Damge", out var bluntval3);
+            lghtngcfg.m_itemData.m_shared.m_toolTier = (int)bluntval3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Slash Damage", out var slashval3);
+            lghtngcfg.m_itemData.m_shared.m_damages.m_slash = (int)slashval3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Pierce Damge", out var peirceval3);
+            lghtngcfg.m_itemData.m_shared.m_damages.m_pierce = (int)peirceval3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage", out var chopval3);
+            lghtngcfg.m_itemData.m_shared.m_damages.m_chop = (int)chopval3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "PickAxe Damage", out var pickaxeval3);
+            lghtngcfg.m_itemData.m_shared.m_damages.m_pickaxe = (int)pickaxeval3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Fire Damage", out var fireprval3);
+            lghtngcfg.m_itemData.m_shared.m_damages.m_fire = (int)fireprval3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Frost Damage", out var forstprval3);
+            lghtngcfg.m_itemData.m_shared.m_damages.m_frost = (int)forstprval3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Lightning Damage", out var lghtprval3);
+            lghtngcfg.m_itemData.m_shared.m_damages.m_lightning = (int)lghtprval3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Poison Damage", out var icepsnval3);
+            lghtngcfg.m_itemData.m_shared.m_damages.m_poison = (int)icepsnval3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Spirit Damage", out var icesprval3);
+            lghtngcfg.m_itemData.m_shared.m_damages.m_spirit = (int)icesprval3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Overall Damage Per Level", out var damageper3);
+            lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageper3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Blunt Damage Per Level", out var bluntper3);
+            lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntper3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Slash Damage Per Level", out var slashper3);
+            lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashper3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Pierce Damage Per Level", out var pierceper3);
+            lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceper3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Chop Damage Per Level", out var chopper3);
+            lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopper3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "PickAxe Damage Per Level", out var pickaxeper3);
+            lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeper3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Fire Damage Per Level", out var fireper3);
+            lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireper3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Frost Damage Per Level", out var frostper3);
+            lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostper3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Lightning Damage Per Level", out var lightningper3);
+            lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningper3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Poison Damage Per Level", out var poisonper3);
+            lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonper3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Spirit Damage Per Level", out var spiritper3);
+            lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritper3.Value;
+            this.Config.TryGetEntry<int>("Frost Sword", "Attack Force", out var attackforce3);
+            lghtngcfg.m_itemData.m_shared.m_attackForce = (int)attackforce3.Value;
+            #endregion
         }
         public void LoadgameFabs()
         {
