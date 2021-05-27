@@ -147,6 +147,9 @@ namespace RuneSwords
         private EffectList trailfx;
         private EffectList buildsounds;
 
+        private GameObject FrostSword;
+        private CustomItem Frost_Sword;
+
         private void Awake()
         {
             LoadAssets();
@@ -290,8 +293,7 @@ namespace RuneSwords
             lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperlight.Value;
             lghtngcfg.m_itemData.m_shared.m_attackForce = attackforcelight.Value;
             #endregion
-
-
+            
         }
         public void LoadgameFabs()
         {
@@ -342,8 +344,8 @@ namespace RuneSwords
         }
         public void IceSword()
         {
-            var icefab = runeassets.LoadAsset<GameObject>("IceRuneSword");
-            var icerune = new CustomItem(icefab, fixReference: true,
+            FrostSword = runeassets.LoadAsset<GameObject>("IceRuneSword");
+            Frost_Sword = new CustomItem(FrostSword, fixReference: true,
                 new ItemConfig
                 {
                     Amount = 1,
@@ -360,7 +362,7 @@ namespace RuneSwords
                         new RequirementConfig {Item = "DragonTear", Amount = (int)DragonTear.Value, AmountPerLevel = 5}
                     }
                 });
-            var itemDrop = icerune.ItemDrop;
+            var itemDrop = Frost_Sword.ItemDrop;
             itemDrop.m_itemData.m_shared.m_damages.m_damage = (int)damagefrost.Value;
             itemDrop.m_itemData.m_shared.m_damages.m_blunt = (int)bluntfrost.Value;
             itemDrop.m_itemData.m_shared.m_toolTier = (int)tierfrost.Value;
@@ -390,7 +392,7 @@ namespace RuneSwords
             itemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
             itemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
 
-            ItemManager.Instance.AddItem(icerune);
+            ItemManager.Instance.AddItem(Frost_Sword);
 
         }
 
