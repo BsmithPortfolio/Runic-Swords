@@ -28,9 +28,6 @@ Fixed the piece placement of runic upgrades for crafting table
 **V0.0.6***
 Fully configurable and added some shiny light things to the swords
 
-**V0.0.7**
-Fixed damage values being synced by server owners when user edits prior to login
-
 These swords were meant for more "hard" servers yes the crafting reqs are alot yes they are OP no I wont turn them down 
 
 TLDR 

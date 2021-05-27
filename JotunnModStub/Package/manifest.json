@@ -1,10 +1,10 @@
 ﻿{
   "name": "RunicSwords",
   "description": "https://github.com/sbtoonz/RunicSwords",
-  "version_number": "1.0.6",
+  "version_number": "1.0.7",
   "website_url": "",
   "dependencies": [
-    "denikson-BepInExPack_Valheim-5.4.1000",
-    "ValheimModding-Jotunn-2.0.7"
+    "denikson-BepInExPack_Valheim-5.4.1100",
+    "ValheimModding-Jotunn-2.0.11"
   ]
 }
