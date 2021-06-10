@@ -24,7 +24,7 @@ namespace RuneSwords
         public const string PluginName = "RuneSwords";
         public const string PluginVersion = "0.0.7";
         private AssetBundle runeassets;
-
+        #region ConfigEntries
         public ConfigEntry<bool> LightEnable;
         public ConfigEntry<bool> FireEnable;
         public ConfigEntry<bool> FrostEnable;
@@ -69,6 +69,30 @@ namespace RuneSwords
         private ConfigEntry<int> spiritperfrost;
         private ConfigEntry<int> tierfrost;
         private ConfigEntry<int> attackforcefrost;
+        private ConfigEntry<int> greatdamagefrost;
+        private ConfigEntry<int> greatbluntfrost;
+        private ConfigEntry<int> greatslashvalfrost;
+        private ConfigEntry<int> greatpiercefrost;
+        private ConfigEntry<int> greatchopfrost;
+        private ConfigEntry<int> greatpickaxefrost;
+        private ConfigEntry<int> greatfirefrost;
+        private ConfigEntry<int> greatfrostfrost;
+        private ConfigEntry<int> greatlightningfrost;
+        private ConfigEntry<int> greatpoisonfrost;
+        private ConfigEntry<int> greatspiritfrost;
+        private ConfigEntry<int> greatdamageperfrost;
+        private ConfigEntry<int> greatbluntperfrost;
+        private ConfigEntry<int> greatslashperfrost;
+        private ConfigEntry<int> greatpierceperfrost;
+        private ConfigEntry<int> greatchopperfrost;
+        private ConfigEntry<int> greatpickaxeperfrost;
+        private ConfigEntry<int> greatfireperfrost;
+        private ConfigEntry<int> greatfrostperfrost;
+        private ConfigEntry<int> greatlightningperfrost;
+        private ConfigEntry<int> greatpoisonperfrost;
+        private ConfigEntry<int> greatspiritperfrost;
+        private ConfigEntry<int> greattierfrost;
+        private ConfigEntry<int> greatattackforcefrost;
         private ConfigEntry<int> damagefire;
         private ConfigEntry<int> bluntfire;
         private ConfigEntry<int> slashvalfire;
@@ -93,6 +117,32 @@ namespace RuneSwords
         private ConfigEntry<int> spiritperfire;
         private ConfigEntry<int> tierfire;
         private ConfigEntry<int> attackforcefire;
+        private ConfigEntry<int> greatdamagefire;
+        private ConfigEntry<int> greatbluntfire;
+        private ConfigEntry<int> greatslashvalfire;
+        private ConfigEntry<int> greatpiercefire;
+        private ConfigEntry<int> greatchopfire;
+        private ConfigEntry<int> greatpickaxefire;
+
+        public ConfigEntry<int> greatfirefire;
+
+        private ConfigEntry<int> greatfrostfire;
+        private ConfigEntry<int> greatlightningfire;
+        private ConfigEntry<int> greatpoisonfire;
+        private ConfigEntry<int> greatspiritfire;
+        private ConfigEntry<int> greatdamageperfire;
+        private ConfigEntry<int> greatbluntperfire;
+        private ConfigEntry<int> greatslashperfire;
+        private ConfigEntry<int> greatpierceperfire;
+        private ConfigEntry<int> greatchopperfire;
+        private ConfigEntry<int> greatpickaxeperfire;
+        private ConfigEntry<int> greatfireperfire;
+        private ConfigEntry<int> greatfrostperfire;
+        private ConfigEntry<int> greatlightningperfire;
+        private ConfigEntry<int> greatpoisonperfire;
+        private ConfigEntry<int> greatspiritperfire;
+        private ConfigEntry<int> greattierfire;
+        private ConfigEntry<int> greatattackforcefire;
         private ConfigEntry<int> damagelight;
         private ConfigEntry<int> bluntlight;
         private ConfigEntry<int> slashvallight;
@@ -141,6 +191,7 @@ namespace RuneSwords
         private ConfigEntry<int> firelight;
         private ConfigEntry<int> frostlight;
         private ConfigEntry<int> lightninglight;
+        #endregion
         private EffectList effecthit;
         private EffectList effectblocked;
         private EffectList trigger;
@@ -149,6 +200,16 @@ namespace RuneSwords
 
         private GameObject FrostSword;
         private CustomItem Frost_Sword;
+        private GameObject Ice_GreatSword;
+        private CustomItem IceGreat_Sword;
+        private GameObject Fire_GreatSword;
+        private CustomItem FireGreat_Sword;
+        private GameObject Poison_GreatSword;
+        private CustomItem PoisonGreat_Sword;
+        private GameObject Lgntng_GreatSword;
+        private CustomItem YlwGreatSwrd;
+        private GameObject firefab;
+        private CustomItem firerune;
 
         private void Awake()
         {
@@ -180,34 +241,31 @@ namespace RuneSwords
 
         private void LoadSwords()
         {
-
-            //todo split this into loading cfgs vs loading prefabs. So cfgs load and apply on sync as well.
             #region Ice Sword Config
             //Apply Ice Sword CFG
-            var icecfg = PrefabManager.Instance.GetPrefab("IceRuneSword").GetComponent<ItemDrop>();
-            icecfg.m_itemData.m_shared.m_damages.m_damage = (int)damagefrost.Value;
-            icecfg.m_itemData.m_shared.m_toolTier = (int)bluntfrost.Value;
-            icecfg.m_itemData.m_shared.m_damages.m_slash = (int)slashvalfrost.Value;
-            icecfg.m_itemData.m_shared.m_damages.m_pierce = (int)piercefrost.Value;
-            icecfg.m_itemData.m_shared.m_damages.m_chop = (int)chopfrost.Value;
-            icecfg.m_itemData.m_shared.m_damages.m_pickaxe = (int)pickaxefrost.Value;
-            icecfg.m_itemData.m_shared.m_damages.m_fire = (int)firefrost.Value;
-            icecfg.m_itemData.m_shared.m_damages.m_frost = (int)frostfrost.Value;
-            icecfg.m_itemData.m_shared.m_damages.m_lightning = (int)lightningfrost.Value;
-            icecfg.m_itemData.m_shared.m_damages.m_poison = (int)poisonfrost.Value;
-            icecfg.m_itemData.m_shared.m_damages.m_spirit = (int)spiritfrost.Value;
-            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageperfrost.Value;
-            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntperfrost.Value;
-            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashperfrost.Value;
-            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceperfrost.Value;
-            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopperfrost.Value;
-            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeperfrost.Value;
-            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireperfrost.Value;
-            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostperfrost.Value;
-            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningperfrost.Value;
-            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonperfrost.Value;
-            icecfg.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritperfrost.Value;
-            icecfg.m_itemData.m_shared.m_attackForce = (int)attackforcefrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_damage = (int)damagefrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_toolTier = (int)bluntfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_slash = (int)slashvalfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = (int)piercefrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_chop = (int)chopfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = (int)pickaxefrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_fire = (int)firefrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_frost = (int)frostfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = (int)lightningfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_poison = (int)poisonfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = (int)spiritfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_attackForce = (int)attackforcefrost.Value;
             #endregion
             #region Fire Sword Config
             //fire sword config
@@ -293,7 +351,60 @@ namespace RuneSwords
             lghtngcfg.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperlight.Value;
             lghtngcfg.m_itemData.m_shared.m_attackForce = attackforcelight.Value;
             #endregion
-            
+            #region Frost Great Sword Config
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_damage = (int)greatdamagefrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = (int)greatbluntfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_toolTier = (int)greattierfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_slash = (int)greatslashvalfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = (int)greatpiercefrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_chop = (int)greatchopfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = (int)greatpickaxefrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_fire = (int)greatfirefrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_frost = (int)greatfrostfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = (int)greatlightningfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_poison = (int)greatpoisonfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = (int)greatspiritfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)greatdamageperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)greatbluntperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)greatslashperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)greatpierceperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)greatchopperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)greatpickaxeperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)greatfireperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)greatfrostperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)greatlightningperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)greatpoisonperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)greatspiritperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_attackForce = (int)greatattackforcefrost.Value;
+            #endregion
+            #region Fire Great Sword Config
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_damage = greatdamagefire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = greatbluntfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_toolTier = greattierfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_slash = greatslashvalfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = greatpiercefire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_chop = greatchopfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = greatpickaxefire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_fire = greatfirefire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_frost = greatfrostfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = greatlightningfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_poison = greatpoisonfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = greatspiritfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = greatdamageperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = greatbluntperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = greatslashperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = greatpierceperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = greatchopperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = greatpickaxeperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = greatfireperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = greatfrostperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = greatlightningperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = greatpoisonperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = greatspiritperfire.Value;
+            #endregion
+
         }
         public void LoadgameFabs()
         {
@@ -332,6 +443,10 @@ namespace RuneSwords
                 FireSword();
                 PoisonSword();
                 LightningSword();
+                IceGreatSword();
+                FireGreatSword();
+                PoisonGreatSword();
+                LightningGreatSword();
             }
             catch (Exception ex)
             {
@@ -362,35 +477,36 @@ namespace RuneSwords
                         new RequirementConfig {Item = "DragonTear", Amount = (int)DragonTear.Value, AmountPerLevel = 5}
                     }
                 });
-            var itemDrop = Frost_Sword.ItemDrop;
-            itemDrop.m_itemData.m_shared.m_damages.m_damage = (int)damagefrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_blunt = (int)bluntfrost.Value;
-            itemDrop.m_itemData.m_shared.m_toolTier = (int)tierfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_slash = (int)slashvalfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_pierce = (int)piercefrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_chop = (int)chopfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_pickaxe = (int)pickaxefrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_fire = (int)firefrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_frost = (int)frostfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_lightning = (int)lightningfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_poison = (int)poisonfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damages.m_spirit = (int)spiritfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritperfrost.Value;
-            itemDrop.m_itemData.m_shared.m_attackForce = (int)attackforcefrost.Value;
-            itemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
-            itemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
-            itemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
-            itemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+            
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_damage = (int)damagefrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = (int)bluntfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_toolTier = (int)tierfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_slash = (int)slashvalfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = (int)piercefrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_chop = (int)chopfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = (int)pickaxefrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_fire = (int)firefrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_frost = (int)frostfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = (int)lightningfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_poison = (int)poisonfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = (int)spiritfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritperfrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_attackForce = (int)attackforcefrost.Value;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            Frost_Sword.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
 
             ItemManager.Instance.AddItem(Frost_Sword);
 
@@ -398,8 +514,8 @@ namespace RuneSwords
 
         public void FireSword()
         {
-            var firefab = runeassets.LoadAsset<GameObject>("FireRuneSword");
-            var firerune = new CustomItem(firefab, fixReference: true,
+            firefab = runeassets.LoadAsset<GameObject>("FireRuneSword");
+            firerune = new CustomItem(firefab, fixReference: true,
                 new ItemConfig
                 {
                     Amount = 1,
@@ -416,35 +532,35 @@ namespace RuneSwords
                         new RequirementConfig {Item = "Obsidian", Amount = ObsidianFire.Value, AmountPerLevel = 5},
                     }
                 });
-            var itemthing = firerune.ItemDrop;
-            itemthing.m_itemData.m_shared.m_damages.m_damage = damagefire.Value;
-            itemthing.m_itemData.m_shared.m_damages.m_blunt = bluntfire.Value;
-            itemthing.m_itemData.m_shared.m_toolTier = tierfire.Value;
-            itemthing.m_itemData.m_shared.m_damages.m_slash = slashvalfire.Value;
-            itemthing.m_itemData.m_shared.m_damages.m_pierce = piercefire.Value;
-            itemthing.m_itemData.m_shared.m_damages.m_chop = chopfire.Value;
-            itemthing.m_itemData.m_shared.m_damages.m_pickaxe = pickaxefire.Value;
-            itemthing.m_itemData.m_shared.m_damages.m_fire = firefire.Value;
-            itemthing.m_itemData.m_shared.m_damages.m_frost = frostfire.Value;
-            itemthing.m_itemData.m_shared.m_damages.m_lightning = lightningfire.Value;
-            itemthing.m_itemData.m_shared.m_damages.m_poison = poisonfire.Value;
-            itemthing.m_itemData.m_shared.m_damages.m_spirit = spiritfire.Value;
-            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperfire.Value;
-            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperfire.Value;
-            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperfire.Value;
-            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperfire.Value;
-            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperfire.Value;
-            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperfire.Value;
-            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperfire.Value;
-            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperfire.Value;
-            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperfire.Value;
-            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperfire.Value;
-            itemthing.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperfire.Value;
-            itemthing.m_itemData.m_shared.m_attackForce = attackforcefire.Value;
-            itemthing.m_itemData.m_shared.m_hitEffect = effecthit;
-            itemthing.m_itemData.m_shared.m_blockEffect = effectblocked;
-            itemthing.m_itemData.m_shared.m_triggerEffect = trigger;
-            itemthing.m_itemData.m_shared.m_trailStartEffect = trailfx;
+            firerune.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            firerune.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damagefire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_toolTier = tierfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvalfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = piercefire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damages.m_chop = chopfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxefire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damages.m_fire = firefire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightningfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperfire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_attackForce = attackforcefire.Value;
+            firerune.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            firerune.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            firerune.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            firerune.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
             ItemManager.Instance.AddItem(firerune);
         }
 
@@ -469,6 +585,7 @@ namespace RuneSwords
                     } 
                 });
             var posiondrop = poison.ItemDrop;
+            posiondrop.m_itemData.m_shared.m_maxQuality = 10;
             posiondrop.m_itemData.m_shared.m_damages.m_damage = damageposion.Value;
             posiondrop.m_itemData.m_shared.m_damages.m_blunt = bluntposion.Value;
             posiondrop.m_itemData.m_shared.m_toolTier = tierposion.Value;
@@ -521,6 +638,7 @@ namespace RuneSwords
                     }
                 });
             var lightningdrop = llightrune.ItemDrop;
+            lightningdrop.m_itemData.m_shared.m_maxQuality = 10;
             lightningdrop.m_itemData.m_shared.m_damages.m_damage = damagelight.Value;
             lightningdrop.m_itemData.m_shared.m_damages.m_blunt = bluntlight.Value;
             lightningdrop.m_itemData.m_shared.m_toolTier = tierlight.Value;
@@ -553,6 +671,161 @@ namespace RuneSwords
             ItemManager.Instance.AddItem(llightrune);
         }
          
+        public void IceGreatSword()
+        {
+            Ice_GreatSword = runeassets.LoadAsset<GameObject>("GreatIceRuneSword");
+            IceGreat_Sword = new CustomItem(Ice_GreatSword, fixReference: true,
+                new ItemConfig
+                {
+                    Amount = 1,
+                    Name = "Great Runic Ice Sword",
+                    Enabled = FrostEnable.Value,
+                    CraftingStation = "piece_artisanstation",
+                    RepairStation = "piece_artisanstation",
+                    MinStationLevel = 2,
+                    Requirements = new[]
+                    {//todo fix recipe config sync for great weapon
+                        new RequirementConfig {Item = "Obsidian", Amount = (int)ObsidianFrost.Value, AmountPerLevel = 5},
+                        new RequirementConfig {Item = "Iron", Amount = (int)IronFrost.Value, AmountPerLevel = 25},
+                        new RequirementConfig {Item = "FreezeGland", Amount = (int)IceFreezeGland.Value, AmountPerLevel = 10},
+                        new RequirementConfig {Item = "DragonTear", Amount = (int)DragonTear.Value, AmountPerLevel = 5}
+                    }
+                });
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_damage = (int)greatdamagefrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = (int)greatbluntfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_toolTier = (int)greattierfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_slash = (int)greatslashvalfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = (int)greatpiercefrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_chop = (int)greatchopfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = (int)greatpickaxefrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_fire = (int)greatfirefrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_frost = (int)greatfrostfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = (int)greatlightningfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_poison = (int)greatpoisonfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = (int)greatspiritfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)greatdamageperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)greatbluntperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)greatslashperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)greatpierceperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)greatchopperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)greatpickaxeperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)greatfireperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)greatfrostperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)greatlightningperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)greatpoisonperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)greatspiritperfrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_attackForce = (int)greatattackforcefrost.Value;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            IceGreat_Sword.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+            ItemManager.Instance.AddItem(IceGreat_Sword);
+        }
+        public void FireGreatSword()
+        {
+            Fire_GreatSword = runeassets.LoadAsset<GameObject>("GreatFireRuneSword");
+            FireGreat_Sword = new CustomItem(Fire_GreatSword, fixReference: true,
+            new ItemConfig
+            {
+                Amount = 1,
+                     Name = "Great Runic Fire Sword",
+                     Enabled = FireEnable.Value,
+                     CraftingStation = "piece_artisanstation",
+                     RepairStation = "piece_artisanstation",
+                    MinStationLevel = 2,
+                    Requirements = new[]
+                    {
+                        //todo fix recipe config sync for great weapon
+                        new RequirementConfig {Item = "Flametal", Amount = FireFlametal.Value, AmountPerLevel = 50},
+                        new RequirementConfig {Item = "SurtlingCore", Amount = FireSurtling.Value, AmountPerLevel = 35},
+                        new RequirementConfig {Item = "Iron", Amount = IronFire.Value, AmountPerLevel = 25},
+                        new RequirementConfig {Item = "Obsidian", Amount = ObsidianFire.Value, AmountPerLevel = 5},
+                    }
+            });
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_damage = greatdamagefire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = greatbluntfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_toolTier = greattierfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_slash = greatslashvalfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = greatpiercefire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_chop = greatchopfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = greatpickaxefire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_fire = greatfirefire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_frost = greatfrostfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = greatlightningfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_poison = greatpoisonfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = greatspiritfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = greatdamageperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = greatbluntperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = greatslashperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = greatpierceperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = greatchopperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = greatpickaxeperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = greatfireperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = greatfrostperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = greatlightningperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = greatpoisonperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = greatspiritperfire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_attackForce = greatattackforcefire.Value;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+            ItemManager.Instance.AddItem(FireGreat_Sword);
+        }
+        public void PoisonGreatSword()
+        {
+            Poison_GreatSword = runeassets.LoadAsset<GameObject>("GreatPoisonRuneSword");
+            PoisonGreat_Sword = new CustomItem(Poison_GreatSword, fixReference: true,
+                new ItemConfig
+                {
+                    Amount = 1,
+                    Name = "Great Runic Poison Sword",
+                    Enabled = PoisonEnable.Value,
+                    CraftingStation = "piece_artisanstation",
+                    RepairStation = "piece_artisanstation",
+                    MinStationLevel = 2,
+                    Requirements = new[]
+                    {
+                        new RequirementConfig {Item = "Obsidian", Amount = ObsidianPoison.Value, AmountPerLevel = 10},
+                        new RequirementConfig {Item = "Ooze", Amount = PoisonOoze.Value, AmountPerLevel = 25},
+                        new RequirementConfig {Item = "Iron", Amount = IronPoison.Value, AmountPerLevel = 25},
+                        new RequirementConfig {Item = "Guck", Amount = PoisonGuck.Value, AmountPerLevel = 10}
+                    }
+                });
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+            ItemManager.Instance.AddItem(PoisonGreat_Sword);
+        }
+        public void LightningGreatSword()
+        {
+            Lgntng_GreatSword = runeassets.LoadAsset<GameObject>("GreatLightningRuneSword");
+            YlwGreatSwrd = new CustomItem(Lgntng_GreatSword, fixReference: true,
+                new ItemConfig
+                {
+                    Amount = 1,
+                    Name = "Great Runic Lightning Sword",
+                    Enabled = LightEnable.Value,
+                    CraftingStation = "piece_artisanstation",
+                    RepairStation = "piece_artisanstation",
+                    MinStationLevel = 2,
+                    Requirements = new[]
+                    {
+                        new RequirementConfig {Item = "Obsidian", Amount = ObsidianLight.Value, AmountPerLevel = 5},
+                        new RequirementConfig {Item = "Iron", Amount = IronLight.Value, AmountPerLevel = 25},
+                        new RequirementConfig {Item = "TrophyEikthyr", Amount = Trophy.Value, AmountPerLevel = 1},
+                        new RequirementConfig {Item = "HardAntler", Amount = Antler.Value, AmountPerLevel = 10}
+                    }
+                });
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+            ItemManager.Instance.AddItem(YlwGreatSwrd);
+        }
         public void piece_exentension()
         {
             var extension1 = runeassets.LoadAsset<GameObject>("piece_artisanice");
@@ -744,6 +1017,36 @@ namespace RuneSwords
 
             tierfrost = Config.Bind("Frost Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             attackforcefrost = Config.Bind("Frost Sword", "Attack Force", 30, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+          
+            
+            greatdamagefrost = Config.Bind("Great Frost Sword", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatbluntfrost = Config.Bind("Great Frost Sword", "Blunt Damge", 0, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatslashvalfrost = Config.Bind("Great Frost Sword", "Slash Damage", 300, new ConfigDescription("Slash Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpiercefrost = Config.Bind("Great Frost Sword", "Pierce Damge", 135, new ConfigDescription("Pierce Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatchopfrost = Config.Bind("Great Frost Sword", "Chop Damage", 0, new ConfigDescription("Chop Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpickaxefrost = Config.Bind("Great Frost Sword", "PickAxe Damage", 0, new ConfigDescription("Pickaxe Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfirefrost = Config.Bind("Great Frost Sword", "Fire Damage", 0, new ConfigDescription("Fire Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfrostfrost = Config.Bind("Great Frost Sword", "Frost Damage", 250, new ConfigDescription("Frost Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatlightningfrost = Config.Bind("Great Frost Sword", "Lightning Damage", 0, new ConfigDescription("Lightning Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpoisonfrost = Config.Bind("Great Frost Sword", "Poison Damage", 0, new ConfigDescription("Poison Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatspiritfrost = Config.Bind("Great Frost Sword", "Spirit Damage", 100, new ConfigDescription("Spirit Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            greatdamageperfrost = Config.Bind("Great Frost Sword", "Overall Damage Per Level", 50, new ConfigDescription("Overall Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatbluntperfrost = Config.Bind("Great Frost Sword", "Blunt Damage Per Level", 50, new ConfigDescription("Blunt Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatslashperfrost = Config.Bind("Great Frost Sword", "Slash Damage Per Level", 50, new ConfigDescription("Slash Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpierceperfrost = Config.Bind("Great Frost Sword", "Pierce Damage Per Level", 50, new ConfigDescription("Pierce Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatchopperfrost = Config.Bind("Great Frost Sword", "Chop Damage Per Level", 50, new ConfigDescription("Chop Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpickaxeperfrost = Config.Bind("Great Frost Sword", "PickAxe Damage Per Level", 50, new ConfigDescription("PickAxe Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfireperfrost = Config.Bind("Great Frost Sword", "Fire Damage Per Level", 50, new ConfigDescription("Fire Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfrostperfrost = Config.Bind("Great Frost Sword", "Frost Damage Per Level", 50, new ConfigDescription("Frost Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatlightningperfrost = Config.Bind("Great Frost Sword", "Lightning Damage Per Level", 50, new ConfigDescription("Lightning Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpoisonperfrost = Config.Bind("Great Frost Sword", "Poison Damage Per Level", 50, new ConfigDescription("Poison Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatspiritperfrost = Config.Bind("Great Frost Sword", "Spirit Damage Per Level", 50, new ConfigDescription("Spirit Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            greattierfrost = Config.Bind("Great Frost Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatattackforcefrost = Config.Bind("Great Frost Sword", "Attack Force", 30, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
 
             //damage values fire
@@ -776,6 +1079,35 @@ namespace RuneSwords
             tierfire = Config.Bind("Fire Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             attackforcefire = Config.Bind("Fire Sword", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
+            greatdamagefire = Config.Bind("Fire Sword", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatbluntfire = Config.Bind("Fire Sword", "Blunt Damge", 0, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatslashvalfire = Config.Bind("Fire Sword", "Slash Damage", 300, new ConfigDescription("Slash Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpiercefire = Config.Bind("Fire Sword", "Pierce Damge", 235, new ConfigDescription("Pierce Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatchopfire = Config.Bind("Fire Sword", "Chop Damage", 0, new ConfigDescription("Chop Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpickaxefire = Config.Bind("Fire Sword", "PickAxe Damage", 0, new ConfigDescription("Pickaxe Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfirefire = Config.Bind("Fire Sword", "Fire Damage", 200, new ConfigDescription("Fire Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfrostfire = Config.Bind("Fire Sword", "Frost Damage", 0, new ConfigDescription("Frost Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatlightningfire = Config.Bind("Fire Sword", "Lightning Damage", 0, new ConfigDescription("Lightning Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpoisonfire = Config.Bind("Fire Sword", "Poison Damage", 0, new ConfigDescription("Poison Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatspiritfire = Config.Bind("Fire Sword", "Spirit Damage", 100, new ConfigDescription("Spirit Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            greatdamageperfire = Config.Bind("Fire Sword", "Overall Damage Per Level", 50, new ConfigDescription("Overall Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatbluntperfire = Config.Bind("Fire Sword", "Blunt Damage Per Level", 50, new ConfigDescription("Blunt Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatslashperfire = Config.Bind("Fire Sword", "Slash Damage Per Level", 50, new ConfigDescription("Slash Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpierceperfire = Config.Bind("Fire Sword", "Pierce Damage Per Level", 50, new ConfigDescription("Pierce Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatchopperfire = Config.Bind("Fire Sword", "Chop Damage Per Level", 50, new ConfigDescription("Chop Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpickaxeperfire = Config.Bind("Fire Sword", "PickAxe Damage Per Level", 50, new ConfigDescription("PickAxe Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfireperfire = Config.Bind("Fire Sword", "Fire Damage Per Level", 50, new ConfigDescription("Fire Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfrostperfire = Config.Bind("Fire Sword", "Frost Damage Per Level", 50, new ConfigDescription("Frost Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatlightningperfire = Config.Bind("Fire Sword", "Lightning Damage Per Level", 50, new ConfigDescription("Lightning Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpoisonperfire = Config.Bind("Fire Sword", "Poison Damage Per Level", 50, new ConfigDescription("Poison Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatspiritperfire = Config.Bind("Fire Sword", "Spirit Damage Per Level", 50, new ConfigDescription("Spirit Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            greattierfire = Config.Bind("Fire Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatattackforcefire = Config.Bind("Fire Sword", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
 
             //damage values lightning
             damagelight = Config.Bind("Lightning Sword", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
@@ -806,6 +1138,35 @@ namespace RuneSwords
 
             tierlight = Config.Bind("Lightning Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             attackforcelight = Config.Bind("Lightning Sword", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            
+            
+            greatdamagelight = Config.Bind("Lightning Sword", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatbluntlight = Config.Bind("Lightning Sword", "Blunt Damge", 0, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatslashvallight = Config.Bind("Lightning Sword", "Slash Damage", 300, new ConfigDescription("Slash Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpiercelight = Config.Bind("Lightning Sword", "Pierce Damge", 135, new ConfigDescription("Pierce Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatchoplight = Config.Bind("Lightning Sword", "Chop Damage", 0, new ConfigDescription("Chop Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpickaxelight = Config.Bind("Lightning Sword", "PickAxe Damage", 0, new ConfigDescription("Pickaxe Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfirelight = Config.Bind("Lightning Sword", "Fire Damage", 0, new ConfigDescription("Fire Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfrostlight = Config.Bind("Lightning Sword", "Frost Damage", 0, new ConfigDescription("Frost Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatlightninglight = Config.Bind("Lightning Sword", "Lightning Damage", 250, new ConfigDescription("Lightning Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpoisonlight = Config.Bind("Lightning Sword", "Poison Damage", 0, new ConfigDescription("Poison Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatspiritlight = Config.Bind("Lightning Sword", "Spirit Damage", 100, new ConfigDescription("Spirit Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+            greatdamageperlight = Config.Bind("Lightning Sword", "Overall Damage Per Level", 50, new ConfigDescription("Overall Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatbluntperlight = Config.Bind("Lightning Sword", "Blunt Damage Per Level", 50, new ConfigDescription("Blunt Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatslashperlight = Config.Bind("Lightning Sword", "Slash Damage Per Level", 50, new ConfigDescription("Slash Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpierceperlight = Config.Bind("Lightning Sword", "Pierce Damage Per Level", 50, new ConfigDescription("Pierce Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatchopperlight = Config.Bind("Lightning Sword", "Chop Damage Per Level", 50, new ConfigDescription("Chop Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpickaxeperlight = Config.Bind("Lightning Sword", "PickAxe Damage Per Level", 50, new ConfigDescription("PickAxe Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfireperlight = Config.Bind("Lightning Sword", "Fire Damage Per Level", 50, new ConfigDescription("Fire Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfrostperlight = Config.Bind("Lightning Sword", "Frost Damage Per Level", 50, new ConfigDescription("Frost Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatlightningperlight = Config.Bind("Lightning Sword", "Lightning Damage Per Level", 50, new ConfigDescription("Lightning Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpoisonperlight = Config.Bind("Lightning Sword", "Poison Damage Per Level", 50, new ConfigDescription("Poison Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatspiritperlight = Config.Bind("Lightning Sword", "Spirit Damage Per Level", 50, new ConfigDescription("Spirit Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            greattierlight = Config.Bind("Lightning Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatattackforcelight = Config.Bind("Lightning Sword", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
             //damage for poison
             damageposion = Config.Bind("Poison Sword", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
