@@ -169,6 +169,30 @@ namespace RuneSwords
         private ConfigEntry<int> spiritperposion;
         private ConfigEntry<int> tierposion;
         private ConfigEntry<int> attackforceposion;
+        private ConfigEntry<int> greatdamageposion;
+        private ConfigEntry<int> greatbluntposion;
+        private ConfigEntry<int> greatslashvalposion;
+        private ConfigEntry<int> greatpierceposion;
+        private ConfigEntry<int> greatchopposion;
+        private ConfigEntry<int> greatpickaxeposion;
+        private ConfigEntry<int> greatfireposion;
+        private ConfigEntry<int> greatfrostposion;
+        private ConfigEntry<int> greatlightningposion;
+        private ConfigEntry<int> greatpoisonposion;
+        private ConfigEntry<int> greatspiritposion;
+        private ConfigEntry<int> greatdamageperposion;
+        private ConfigEntry<int> greatbluntperposion;
+        private ConfigEntry<int> greatslashperposion;
+        private ConfigEntry<int> greatpierceperposion;
+        private ConfigEntry<int> greatchopperposion;
+        private ConfigEntry<int> greatpickaxeperposion;
+        private ConfigEntry<int> greatfireperposion;
+        private ConfigEntry<int> greatfrostperposion;
+        private ConfigEntry<int> greatlightningperposion;
+        private ConfigEntry<int> greatpoisonperposion;
+        private ConfigEntry<int> greatspiritperposion;
+        private ConfigEntry<int> greattierposion;
+        private ConfigEntry<int> greatattackforceposion;
         private ConfigEntry<int> slashperlight;
         private ConfigEntry<int> pierceperlight;
         private ConfigEntry<int> chopperlight;
@@ -180,6 +204,30 @@ namespace RuneSwords
         private ConfigEntry<int> spiritperlight;
         private ConfigEntry<int> tierlight;
         private ConfigEntry<int> attackforcelight;
+        private ConfigEntry<int> greatdamagelight;
+        private ConfigEntry<int> greatbluntlight;
+        private ConfigEntry<int> greatslashvallight;
+        private ConfigEntry<int> greatpiercelight;
+        private ConfigEntry<int> greatchoplight;
+        private ConfigEntry<int> greatpickaxelight;
+        private ConfigEntry<int> greatfirelight;
+        private ConfigEntry<int> greatfrostlight;
+        private ConfigEntry<int> greatlightninglight;
+        private ConfigEntry<int> greatpoisonlight;
+        private ConfigEntry<int> greatspiritlight;
+        private ConfigEntry<int> greatdamageperlight;
+        private ConfigEntry<int> greatbluntperlight;
+        private ConfigEntry<int> greatslashperlight;
+        private ConfigEntry<int> greatpierceperlight;
+        private ConfigEntry<int> greatchopperlight;
+        private ConfigEntry<int> greatpickaxeperlight;
+        private ConfigEntry<int> greatfireperlight;
+        private ConfigEntry<int> greatfrostperlight;
+        private ConfigEntry<int> greatlightningperlight;
+        private ConfigEntry<int> greatpoisonperlight;
+        private ConfigEntry<int> greatspiritperlight;
+        private ConfigEntry<int> greattierlight;
+        private ConfigEntry<int> greatattackforcelight;
         private ConfigEntry<int> damageposion;
         private ConfigEntry<int> bluntposion;
         private ConfigEntry<int> poisonlight;
@@ -210,6 +258,10 @@ namespace RuneSwords
         private CustomItem YlwGreatSwrd;
         private GameObject firefab;
         private CustomItem firerune;
+        private GameObject poisonfab;
+        private CustomItem poison;
+        private GameObject lightningfab;
+        private CustomItem llightrune;
 
         private void Awake()
         {
@@ -404,7 +456,60 @@ namespace RuneSwords
             FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = greatpoisonperfire.Value;
             FireGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = greatspiritperfire.Value;
             #endregion
+            #region Poison Great Sword Config
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damageposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_toolTier = tierposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvalposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = pierceposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_chop = chopposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxeposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_fire = fireposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightningposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_attackForce = attackforceposion.Value;
+            #endregion
 
+            #region Great Lightning Sword Config
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damagelight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_toolTier = tierlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvallight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = piercelight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_chop = choplight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxelight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_fire = firelight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightninglight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperlight.Value;
+            #endregion
         }
         public void LoadgameFabs()
         {
@@ -566,8 +671,8 @@ namespace RuneSwords
 
         public void PoisonSword()
         {
-            var poisonfab = runeassets.LoadAsset<GameObject>("PoisonRuneSword");
-            var poison = new CustomItem(poisonfab, fixReference: true,
+             poisonfab = runeassets.LoadAsset<GameObject>("PoisonRuneSword");
+             poison = new CustomItem(poisonfab, fixReference: true,
                 new ItemConfig
                 {
                     Amount = 1,
@@ -584,43 +689,42 @@ namespace RuneSwords
                         new RequirementConfig {Item = "Guck", Amount = PoisonGuck.Value, AmountPerLevel = 10}
                     } 
                 });
-            var posiondrop = poison.ItemDrop;
-            posiondrop.m_itemData.m_shared.m_maxQuality = 10;
-            posiondrop.m_itemData.m_shared.m_damages.m_damage = damageposion.Value;
-            posiondrop.m_itemData.m_shared.m_damages.m_blunt = bluntposion.Value;
-            posiondrop.m_itemData.m_shared.m_toolTier = tierposion.Value;
-            posiondrop.m_itemData.m_shared.m_damages.m_slash = slashvalposion.Value;
-            posiondrop.m_itemData.m_shared.m_damages.m_pierce = pierceposion.Value;
-            posiondrop.m_itemData.m_shared.m_damages.m_chop = chopposion.Value;
-            posiondrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxeposion.Value;
-            posiondrop.m_itemData.m_shared.m_damages.m_fire = fireposion.Value;
-            posiondrop.m_itemData.m_shared.m_damages.m_frost = frostposion.Value;
-            posiondrop.m_itemData.m_shared.m_damages.m_lightning = lightningposion.Value;
-            posiondrop.m_itemData.m_shared.m_damages.m_poison = poisonposion.Value;
-            posiondrop.m_itemData.m_shared.m_damages.m_spirit = spiritposion.Value;
-            posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperposion.Value;
-            posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperposion.Value;
-            posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperposion.Value;
-            posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperposion.Value;
-            posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperposion.Value;
-            posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperposion.Value;
-            posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperposion.Value;
-            posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperposion.Value;
-            posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperposion.Value;
-            posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperposion.Value;
-            posiondrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperposion.Value;
-            posiondrop.m_itemData.m_shared.m_attackForce = attackforceposion.Value;
-            posiondrop.m_itemData.m_shared.m_hitEffect = effecthit;
-            posiondrop.m_itemData.m_shared.m_blockEffect = effectblocked;
-            posiondrop.m_itemData.m_shared.m_triggerEffect = trigger;
-            posiondrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+            poison.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            poison.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damageposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_toolTier = tierposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvalposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = pierceposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damages.m_chop = chopposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxeposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damages.m_fire = fireposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightningposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_attackForce = attackforceposion.Value;
+            poison.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            poison.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            poison.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            poison.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
             ItemManager.Instance.AddItem(poison);
         }
 
         public void LightningSword()
         {
-            var lightningfab = runeassets.LoadAsset<GameObject>("LightningRuneSword");
-            var llightrune = new CustomItem(lightningfab, fixReference: true,
+            lightningfab = runeassets.LoadAsset<GameObject>("LightningRuneSword");
+            llightrune = new CustomItem(lightningfab, fixReference: true,
                 new ItemConfig
                 {
                     Amount = 1,
@@ -637,36 +741,35 @@ namespace RuneSwords
                         new RequirementConfig {Item = "HardAntler", Amount = Antler.Value, AmountPerLevel = 10}
                     }
                 });
-            var lightningdrop = llightrune.ItemDrop;
-            lightningdrop.m_itemData.m_shared.m_maxQuality = 10;
-            lightningdrop.m_itemData.m_shared.m_damages.m_damage = damagelight.Value;
-            lightningdrop.m_itemData.m_shared.m_damages.m_blunt = bluntlight.Value;
-            lightningdrop.m_itemData.m_shared.m_toolTier = tierlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damages.m_slash = slashvallight.Value;
-            lightningdrop.m_itemData.m_shared.m_damages.m_pierce = piercelight.Value;
-            lightningdrop.m_itemData.m_shared.m_damages.m_chop = choplight.Value;
-            lightningdrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxelight.Value;
-            lightningdrop.m_itemData.m_shared.m_damages.m_fire = firelight.Value;
-            lightningdrop.m_itemData.m_shared.m_damages.m_frost = frostlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damages.m_lightning = lightninglight.Value;
-            lightningdrop.m_itemData.m_shared.m_damages.m_poison = poisonlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damages.m_spirit = spiritlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperlight.Value;
-            lightningdrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperlight.Value;
-            lightningdrop.m_itemData.m_shared.m_attackForce = attackforcelight.Value;
-            lightningdrop.m_itemData.m_shared.m_hitEffect = effecthit;
-            lightningdrop.m_itemData.m_shared.m_blockEffect = effectblocked;
-            lightningdrop.m_itemData.m_shared.m_triggerEffect = trigger;
-            lightningdrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+            llightrune.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damagelight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_toolTier = tierlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvallight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = piercelight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damages.m_chop = choplight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxelight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damages.m_fire = firelight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightninglight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperlight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_attackForce = attackforcelight.Value;
+            llightrune.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            llightrune.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            llightrune.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            llightrune.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
 
             ItemManager.Instance.AddItem(llightrune);
         }
@@ -794,6 +897,31 @@ namespace RuneSwords
                         new RequirementConfig {Item = "Guck", Amount = PoisonGuck.Value, AmountPerLevel = 10}
                     }
                 });
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damageposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_toolTier = tierposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvalposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = pierceposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_chop = chopposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxeposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_fire = fireposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightningposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperposion.Value;
+            PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_attackForce = attackforceposion.Value;
             PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
             PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
             PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
@@ -820,6 +948,30 @@ namespace RuneSwords
                         new RequirementConfig {Item = "HardAntler", Amount = Antler.Value, AmountPerLevel = 10}
                     }
                 });
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damagelight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_toolTier = tierlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvallight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = piercelight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_chop = choplight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxelight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_fire = firelight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightninglight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperlight.Value;
             YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
             YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
             YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
