@@ -509,6 +509,7 @@ namespace RuneSwords
             YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = greatlightningperlight.Value;
             YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = greatpoisonperlight.Value;
             YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = greatspiritperlight.Value;
+            YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_attackForce = greatattackforcelight.Value;
             #endregion
         }
         public void LoadgameFabs()
