@@ -665,7 +665,32 @@ namespace RuneSwords
             fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = daggerspiritperfire.Value;
             fire_dagger.ItemDrop.m_itemData.m_shared.m_attackForce = daggerattackforcefire.Value;
             #endregion
-
+            #region Poison Dagger Config
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = daggerdamageposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = daggerbluntposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_toolTier = daggertierposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = daggerslashvalposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = daggerpierceposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = daggerchopposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = daggerpickaxeposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = daggerfireposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = daggerfrostposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = daggerlightningposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = daggerpoisonposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = daggerspiritposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = daggerdamageperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = daggerbluntperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = daggerslashperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = daggerpierceperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = daggerchopperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = daggerpickaxeperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = daggerfireperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = daggerfrostperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = daggerlightningperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = daggerpoisonperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = daggerspiritperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_attackForce = daggerattackforceposion.Value;
+            #endregion
             #region Lightning Dagger Config
             lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = daggerdamagelight.Value;
             lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = daggerbluntlight.Value;
