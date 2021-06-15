@@ -93,6 +93,30 @@ namespace RuneSwords
         private ConfigEntry<int> greatspiritperfrost;
         private ConfigEntry<int> greattierfrost;
         private ConfigEntry<int> greatattackforcefrost;
+        private ConfigEntry<int> daggerdamagefrost;
+        private ConfigEntry<int> daggerbluntfrost;
+        private ConfigEntry<int> daggerslashvalfrost;
+        private ConfigEntry<int> daggerpiercefrost;
+        private ConfigEntry<int> daggerchopfrost;
+        private ConfigEntry<int> daggerpickaxefrost;
+        private ConfigEntry<int> daggerfirefrost;
+        private ConfigEntry<int> daggerfrostfrost;
+        private ConfigEntry<int> daggerlightningfrost;
+        private ConfigEntry<int> daggerpoisonfrost;
+        private ConfigEntry<int> daggerspiritfrost;
+        private ConfigEntry<int> daggerdamageperfrost;
+        private ConfigEntry<int> daggerbluntperfrost;
+        private ConfigEntry<int> daggerslashperfrost;
+        private ConfigEntry<int> daggerpierceperfrost;
+        private ConfigEntry<int> daggerchopperfrost;
+        private ConfigEntry<int> daggerpickaxeperfrost;
+        private ConfigEntry<int> daggerfireperfrost;
+        private ConfigEntry<int> daggerfrostperfrost;
+        private ConfigEntry<int> daggerlightningperfrost;
+        private ConfigEntry<int> daggerpoisonperfrost;
+        private ConfigEntry<int> daggerspiritperfrost;
+        private ConfigEntry<int> daggertierfrost;
+        private ConfigEntry<int> daggerattackforcefrost;
         private ConfigEntry<int> damagefire;
         private ConfigEntry<int> bluntfire;
         private ConfigEntry<int> slashvalfire;
@@ -562,6 +586,10 @@ namespace RuneSwords
                 PoisonGreatSword();
                 LightningGreatSword();
                 Jotunn.Logger.LogMessage("Loading Knives");
+                IceDagger();
+                FireDagger();
+                PoisonDagger();
+                LightningDagger();
 
             }
             catch (Exception ex)
@@ -993,12 +1021,12 @@ namespace RuneSwords
 
         public void IceDagger()
         {
-            FrostDagger = runeassets.LoadAsset<GameObject>("IceRuneSword");
+            FrostDagger = runeassets.LoadAsset<GameObject>("IceRuneDagger");
             Frost_Dagger = new CustomItem(FrostDagger, fixReference: true,
                 new ItemConfig
                 {
                     Amount = 1,
-                    Name = "Runic Ice Sword",
+                    Name = "Runic Ice Dagger",
                     Enabled = FrostEnable.Value,
                     CraftingStation = "piece_artisanstation",
                     RepairStation = "piece_artisanstation",
@@ -1013,30 +1041,30 @@ namespace RuneSwords
                 });
 
             Frost_Dagger.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = (int)damagefrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = (int)bluntfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_toolTier = (int)tierfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = (int)slashvalfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = (int)piercefrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = (int)chopfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = (int)pickaxefrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = (int)firefrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = (int)frostfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = (int)lightningfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = (int)poisonfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = (int)spiritfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageperfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntperfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashperfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceperfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopperfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeperfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireperfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostperfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningperfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonperfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritperfrost.Value;
-            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_attackForce = (int)attackforcefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = (int)daggerdamagefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = (int)daggerbluntfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_toolTier = (int)daggertierfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = (int)daggerslashvalfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = (int)daggerpiercefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = (int)daggerchopfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = (int)daggerpickaxefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = (int)daggerfirefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = (int)daggerfrostfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = (int)daggerlightningfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = (int)daggerpoisonfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = (int)daggerspiritfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)daggerdamageperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)daggerbluntperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)daggerslashperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)daggerpierceperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)daggerchopperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)daggerpickaxeperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)daggerfireperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)daggerfrostperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)daggerlightningperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)daggerpoisonperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)daggerspiritperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_attackForce = (int)daggerattackforcefrost.Value;
             Frost_Dagger.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
             Frost_Dagger.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
             Frost_Dagger.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
@@ -1424,6 +1452,36 @@ namespace RuneSwords
 
             greattierfrost = Config.Bind("Great Frost Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             greatattackforcefrost = Config.Bind("Great Frost Sword", "Attack Force", 30, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            
+            // Frost Dagger
+            daggerdamagefrost = Config.Bind("Runic Frost Dagger", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerbluntfrost = Config.Bind("Runic Frost Dagger", "Blunt Damge", 0, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerslashvalfrost = Config.Bind("Runic Frost Dagger", "Slash Damage", 300, new ConfigDescription("Slash Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpiercefrost = Config.Bind("Runic Frost Dagger", "Pierce Damge", 135, new ConfigDescription("Pierce Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerchopfrost = Config.Bind("Runic Frost Dagger", "Chop Damage", 0, new ConfigDescription("Chop Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpickaxefrost = Config.Bind("Runic Frost Dagger", "PickAxe Damage", 0, new ConfigDescription("Pickaxe Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerfirefrost = Config.Bind("Runic Frost Dagger", "Fire Damage", 0, new ConfigDescription("Fire Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerfrostfrost = Config.Bind("Runic Frost Dagger", "Frost Damage", 250, new ConfigDescription("Frost Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerlightningfrost = Config.Bind("Runic Frost Dagger", "Lightning Damage", 0, new ConfigDescription("Lightning Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpoisonfrost = Config.Bind("Runic Frost Dagger", "Poison Damage", 0, new ConfigDescription("Poison Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerspiritfrost = Config.Bind("Runic Frost Dagger", "Spirit Damage", 100, new ConfigDescription("Spirit Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            daggerdamageperfrost = Config.Bind("Runic Frost Dagger", "Overall Damage Per Level", 50, new ConfigDescription("Overall Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerbluntperfrost = Config.Bind("Runic Frost Dagger", "Blunt Damage Per Level", 50, new ConfigDescription("Blunt Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerslashperfrost = Config.Bind("Runic Frost Dagger", "Slash Damage Per Level", 50, new ConfigDescription("Slash Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpierceperfrost = Config.Bind("Runic Frost Dagger", "Pierce Damage Per Level", 50, new ConfigDescription("Pierce Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerchopperfrost = Config.Bind("Runic Frost Dagger", "Chop Damage Per Level", 50, new ConfigDescription("Chop Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpickaxeperfrost = Config.Bind("Runic Frost Dagger", "PickAxe Damage Per Level", 50, new ConfigDescription("PickAxe Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerfireperfrost = Config.Bind("Runic Frost Dagger", "Fire Damage Per Level", 50, new ConfigDescription("Fire Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerfrostperfrost = Config.Bind("Runic Frost Dagger", "Frost Damage Per Level", 50, new ConfigDescription("Frost Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerlightningperfrost = Config.Bind("Runic Frost Dagger", "Lightning Damage Per Level", 50, new ConfigDescription("Lightning Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpoisonperfrost = Config.Bind("Runic Frost Dagger", "Poison Damage Per Level", 50, new ConfigDescription("Poison Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerspiritperfrost = Config.Bind("Runic Frost Dagger", "Spirit Damage Per Level", 50, new ConfigDescription("Spirit Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            daggertierfrost = Config.Bind("Runic Frost Dagger", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerattackforcefrost = Config.Bind("Runic Frost Dagger", "Attack Force", 30, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
 
             //damage values fire
