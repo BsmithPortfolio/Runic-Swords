@@ -542,6 +542,31 @@ namespace RuneSwords
             YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = greatspiritperlight.Value;
             YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_attackForce = greatattackforcelight.Value;
             #endregion
+            #region Ice Dagger Config
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = (int)daggerdamagefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_toolTier = (int)daggerbluntfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = (int)daggerslashvalfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = (int)daggerpiercefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = (int)daggerchopfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = (int)daggerpickaxefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = (int)daggerfirefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = (int)daggerfrostfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = (int)daggerlightningfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = (int)daggerpoisonfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = (int)daggerspiritfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)daggerdamageperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)daggerbluntperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)daggerslashperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)daggerpierceperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)daggerchopperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)daggerpickaxeperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)daggerfireperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)daggerfrostperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)daggerlightningperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)daggerpoisonperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)daggerspiritperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_attackForce = (int)daggerattackforcefrost.Value;
+            #endregion
         }
         public void LoadgameFabs()
         {
