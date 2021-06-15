@@ -483,7 +483,6 @@ namespace RuneSwords
             PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = greatspiritperposion.Value;
             PoisonGreat_Sword.ItemDrop.m_itemData.m_shared.m_attackForce = greatattackforceposion.Value;
             #endregion
-
             #region Great Lightning Sword Config
             YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
             YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_damages.m_damage = greatdamagelight.Value;
@@ -549,10 +548,13 @@ namespace RuneSwords
                 FireSword();
                 PoisonSword();
                 LightningSword();
+                Jotunn.Logger.LogMessage("Loading Great Swords");
                 IceGreatSword();
                 FireGreatSword();
                 PoisonGreatSword();
                 LightningGreatSword();
+                Jotunn.Logger.LogMessage("Loading Knives");
+
             }
             catch (Exception ex)
             {
