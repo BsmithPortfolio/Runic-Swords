@@ -567,6 +567,33 @@ namespace RuneSwords
             Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)daggerspiritperfrost.Value;
             Frost_Dagger.ItemDrop.m_itemData.m_shared.m_attackForce = (int)daggerattackforcefrost.Value;
             #endregion
+            #region Fire Dagger Config
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damagefire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_toolTier = tierfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvalfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = piercefire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = chopfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxefire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = firefire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightningfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_attackForce = attackforcefire.Value;
+            #endregion
         }
         public void LoadgameFabs()
         {
