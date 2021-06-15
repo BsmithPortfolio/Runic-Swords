@@ -262,6 +262,14 @@ namespace RuneSwords
         private CustomItem poison;
         private GameObject lightningfab;
         private CustomItem llightrune;
+        private GameObject FrostDagger;
+        private CustomItem Frost_Dagger;
+        private GameObject firedagger;
+        private CustomItem fire_dagger;
+        private GameObject poisondagger;
+        private CustomItem poison_dagger;
+        private GameObject lightningdagger;
+        private CustomItem lightning_dagger;
 
         private void Awake()
         {
@@ -982,6 +990,219 @@ namespace RuneSwords
             YlwGreatSwrd.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
             ItemManager.Instance.AddItem(YlwGreatSwrd);
         }
+
+        public void IceDagger()
+        {
+            FrostDagger = runeassets.LoadAsset<GameObject>("IceRuneSword");
+            Frost_Dagger = new CustomItem(FrostDagger, fixReference: true,
+                new ItemConfig
+                {
+                    Amount = 1,
+                    Name = "Runic Ice Sword",
+                    Enabled = FrostEnable.Value,
+                    CraftingStation = "piece_artisanstation",
+                    RepairStation = "piece_artisanstation",
+                    MinStationLevel = 2,
+                    Requirements = new[]
+                    {
+                        new RequirementConfig {Item = "Obsidian", Amount = (int)ObsidianFrost.Value, AmountPerLevel = 5},
+                        new RequirementConfig {Item = "Iron", Amount = (int)IronFrost.Value, AmountPerLevel = 25},
+                        new RequirementConfig {Item = "FreezeGland", Amount = (int)IceFreezeGland.Value, AmountPerLevel = 10},
+                        new RequirementConfig {Item = "DragonTear", Amount = (int)DragonTear.Value, AmountPerLevel = 5}
+                    }
+                });
+
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = (int)damagefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = (int)bluntfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_toolTier = (int)tierfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = (int)slashvalfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = (int)piercefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = (int)chopfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = (int)pickaxefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = (int)firefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = (int)frostfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = (int)lightningfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = (int)poisonfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = (int)spiritfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = (int)damageperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = (int)bluntperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = (int)slashperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = (int)pierceperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = (int)chopperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = (int)pickaxeperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = (int)fireperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = (int)frostperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = (int)lightningperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = (int)poisonperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = (int)spiritperfrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_attackForce = (int)attackforcefrost.Value;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            Frost_Dagger.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+
+            ItemManager.Instance.AddItem(Frost_Dagger);
+
+        }
+
+        public void FireDagger()
+        {
+            firedagger = runeassets.LoadAsset<GameObject>("FireRuneSword");
+            fire_dagger = new CustomItem(firedagger, fixReference: true,
+                new ItemConfig
+                {
+                    Amount = 1,
+                    Name = "Runic Fire Sword",
+                    Enabled = FireEnable.Value,
+                    CraftingStation = "piece_artisanstation",
+                    RepairStation = "piece_artisanstation",
+                    MinStationLevel = 2,
+                    Requirements = new[]
+                    {
+                        new RequirementConfig {Item = "Flametal", Amount = FireFlametal.Value, AmountPerLevel = 50},
+                        new RequirementConfig {Item = "SurtlingCore", Amount = FireSurtling.Value, AmountPerLevel = 35},
+                        new RequirementConfig {Item = "Iron", Amount = IronFire.Value, AmountPerLevel = 25},
+                        new RequirementConfig {Item = "Obsidian", Amount = ObsidianFire.Value, AmountPerLevel = 5},
+                    }
+                });
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damagefire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_toolTier = tierfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvalfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = piercefire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = chopfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxefire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = firefire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightningfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperfire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_attackForce = attackforcefire.Value;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            fire_dagger.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+            ItemManager.Instance.AddItem(fire_dagger);
+        }
+
+        public void PoisonDagger()
+        {
+            poisondagger = runeassets.LoadAsset<GameObject>("PoisonRuneSword");
+            poison_dagger = new CustomItem(poisondagger, fixReference: true,
+               new ItemConfig
+               {
+                   Amount = 1,
+                   Name = "Runic Poison Sword",
+                   Enabled = PoisonEnable.Value,
+                   CraftingStation = "piece_artisanstation",
+                   RepairStation = "piece_artisanstation",
+                   MinStationLevel = 2,
+                   Requirements = new[]
+                   {
+                        new RequirementConfig {Item = "Obsidian", Amount = ObsidianPoison.Value, AmountPerLevel = 10},
+                        new RequirementConfig {Item = "Ooze", Amount = PoisonOoze.Value, AmountPerLevel = 25},
+                        new RequirementConfig {Item = "Iron", Amount = IronPoison.Value, AmountPerLevel = 25},
+                        new RequirementConfig {Item = "Guck", Amount = PoisonGuck.Value, AmountPerLevel = 10}
+                   }
+               });
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damageposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_toolTier = tierposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvalposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = pierceposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = chopposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxeposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = fireposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightningposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_attackForce = attackforceposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+            ItemManager.Instance.AddItem(poison_dagger);
+        }
+
+        public void LightningDagger()
+        {
+            lightningdagger = runeassets.LoadAsset<GameObject>("LightningRuneSword");
+            lightning_dagger = new CustomItem(lightningdagger, fixReference: true,
+                new ItemConfig
+                {
+                    Amount = 1,
+                    Name = "Runic Lightning Sword",
+                    Enabled = LightEnable.Value,
+                    CraftingStation = "piece_artisanstation",
+                    RepairStation = "piece_artisanstation",
+                    MinStationLevel = 2,
+                    Requirements = new[]
+                    {
+                        new RequirementConfig {Item = "Obsidian", Amount = ObsidianLight.Value, AmountPerLevel = 5},
+                        new RequirementConfig {Item = "Iron", Amount = IronLight.Value, AmountPerLevel = 25},
+                        new RequirementConfig {Item = "TrophyEikthyr", Amount = Trophy.Value, AmountPerLevel = 1},
+                        new RequirementConfig {Item = "HardAntler", Amount = Antler.Value, AmountPerLevel = 10}
+                    }
+                });
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damagelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_toolTier = tierlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvallight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = piercelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = choplight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = firelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightninglight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_attackForce = attackforcelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_trailStartEffect = trailfx;
+
+            ItemManager.Instance.AddItem(lightning_dagger);
+        }
+
         public void piece_exentension()
         {
             var extension1 = runeassets.LoadAsset<GameObject>("piece_artisanice");
