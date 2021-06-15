@@ -241,6 +241,30 @@ namespace RuneSwords
         private ConfigEntry<int> greatspiritperposion;
         private ConfigEntry<int> greattierposion;
         private ConfigEntry<int> greatattackforceposion;
+        private ConfigEntry<int> daggerdamageposion;
+        private ConfigEntry<int> daggerbluntposion;
+        private ConfigEntry<int> daggerslashvalposion;
+        private ConfigEntry<int> daggerpierceposion;
+        private ConfigEntry<int> daggerchopposion;
+        private ConfigEntry<int> daggerpickaxeposion;
+        private ConfigEntry<int> daggerfireposion;
+        private ConfigEntry<int> daggerfrostposion;
+        private ConfigEntry<int> daggerlightningposion;
+        private ConfigEntry<int> daggerpoisonposion;
+        private ConfigEntry<int> daggerspiritposion;
+        private ConfigEntry<int> daggerdamageperposion;
+        private ConfigEntry<int> daggerbluntperposion;
+        private ConfigEntry<int> daggerslashperposion;
+        private ConfigEntry<int> daggerpierceperposion;
+        private ConfigEntry<int> daggerchopperposion;
+        private ConfigEntry<int> daggerpickaxeperposion;
+        private ConfigEntry<int> daggerfireperposion;
+        private ConfigEntry<int> daggerfrostperposion;
+        private ConfigEntry<int> daggerlightningperposion;
+        private ConfigEntry<int> daggerpoisonperposion;
+        private ConfigEntry<int> daggerspiritperposion;
+        private ConfigEntry<int> daggertierposion;
+        private ConfigEntry<int> daggerattackforceposion;
         private ConfigEntry<int> slashperlight;
         private ConfigEntry<int> pierceperlight;
         private ConfigEntry<int> chopperlight;
@@ -276,6 +300,30 @@ namespace RuneSwords
         private ConfigEntry<int> greatspiritperlight;
         private ConfigEntry<int> greattierlight;
         private ConfigEntry<int> greatattackforcelight;
+        private ConfigEntry<int> daggerdamagelight;
+        private ConfigEntry<int> daggerbluntlight;
+        private ConfigEntry<int> daggerslashvallight;
+        private ConfigEntry<int> daggerpiercelight;
+        private ConfigEntry<int> daggerchoplight;
+        private ConfigEntry<int> daggerpickaxelight;
+        private ConfigEntry<int> daggerfirelight;
+        private ConfigEntry<int> daggerfrostlight;
+        private ConfigEntry<int> daggerlightninglight;
+        private ConfigEntry<int> daggerpoisonlight;
+        private ConfigEntry<int> daggerspiritlight;
+        private ConfigEntry<int> daggerdamageperlight;
+        private ConfigEntry<int> daggerbluntperlight;
+        private ConfigEntry<int> daggerslashperlight;
+        private ConfigEntry<int> daggerpierceperlight;
+        private ConfigEntry<int> daggerchopperlight;
+        private ConfigEntry<int> daggerpickaxeperlight;
+        private ConfigEntry<int> daggerfireperlight;
+        private ConfigEntry<int> daggerfrostperlight;
+        private ConfigEntry<int> daggerlightningperlight;
+        private ConfigEntry<int> daggerpoisonperlight;
+        private ConfigEntry<int> daggerspiritperlight;
+        private ConfigEntry<int> daggertierlight;
+        private ConfigEntry<int> daggerattackforcelight;
         private ConfigEntry<int> damageposion;
         private ConfigEntry<int> bluntposion;
         private ConfigEntry<int> poisonlight;
@@ -616,6 +664,34 @@ namespace RuneSwords
             fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = daggerpoisonperfire.Value;
             fire_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = daggerspiritperfire.Value;
             fire_dagger.ItemDrop.m_itemData.m_shared.m_attackForce = daggerattackforcefire.Value;
+            #endregion
+
+            #region Lightning Dagger Config
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = daggerdamagelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = daggerbluntlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_toolTier = daggertierlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = daggerslashvallight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = daggerpiercelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = daggerchoplight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = daggerpickaxelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = daggerfirelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = daggerfrostlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = daggerlightninglight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = daggerpoisonlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = daggerspiritlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = daggerdamageperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = daggerbluntperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = daggerslashperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = daggerpierceperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = daggerchopperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = daggerpickaxeperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = daggerfireperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = daggerfrostperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = daggerlightningperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = daggerpoisonperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = daggerspiritperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_attackForce = daggerattackforcelight.Value;
+
             #endregion
         }
         public void LoadgameFabs()
@@ -1203,12 +1279,12 @@ namespace RuneSwords
 
         public void PoisonDagger()
         {
-            poisondagger = runeassets.LoadAsset<GameObject>("PoisonRuneSword");
+            poisondagger = runeassets.LoadAsset<GameObject>("PoisonRuneDagger");
             poison_dagger = new CustomItem(poisondagger, fixReference: true,
                new ItemConfig
                {
                    Amount = 1,
-                   Name = "Runic Poison Sword",
+                   Name = "Runic Poison Dagger",
                    Enabled = PoisonEnable.Value,
                    CraftingStation = "piece_artisanstation",
                    RepairStation = "piece_artisanstation",
@@ -1222,30 +1298,30 @@ namespace RuneSwords
                    }
                });
             poison_dagger.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damageposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_toolTier = tierposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvalposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = pierceposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = chopposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxeposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = fireposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightningposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperposion.Value;
-            poison_dagger.ItemDrop.m_itemData.m_shared.m_attackForce = attackforceposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = daggerdamageposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = daggerbluntposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_toolTier = daggertierposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = daggerslashvalposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = daggerpierceposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = daggerchopposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = daggerpickaxeposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = daggerfireposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = daggerfrostposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = daggerlightningposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = daggerpoisonposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = daggerspiritposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = daggerdamageperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = daggerbluntperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = daggerslashperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = daggerpierceperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = daggerchopperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = daggerpickaxeperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = daggerfireperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = daggerfrostperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = daggerlightningperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = daggerpoisonperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = daggerspiritperposion.Value;
+            poison_dagger.ItemDrop.m_itemData.m_shared.m_attackForce = daggerattackforceposion.Value;
             poison_dagger.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
             poison_dagger.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
             poison_dagger.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
@@ -1255,12 +1331,12 @@ namespace RuneSwords
 
         public void LightningDagger()
         {
-            lightningdagger = runeassets.LoadAsset<GameObject>("LightningRuneSword");
+            lightningdagger = runeassets.LoadAsset<GameObject>("LightningRuneDagger");
             lightning_dagger = new CustomItem(lightningdagger, fixReference: true,
                 new ItemConfig
                 {
                     Amount = 1,
-                    Name = "Runic Lightning Sword",
+                    Name = "Runic Lightning Dagger",
                     Enabled = LightEnable.Value,
                     CraftingStation = "piece_artisanstation",
                     RepairStation = "piece_artisanstation",
@@ -1274,30 +1350,30 @@ namespace RuneSwords
                     }
                 });
             lightning_dagger.ItemDrop.m_itemData.m_shared.m_maxQuality = 10;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = damagelight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = bluntlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_toolTier = tierlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = slashvallight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = piercelight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = choplight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = pickaxelight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = firelight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = frostlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = lightninglight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = poisonlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = spiritlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = damageperlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = bluntperlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = slashperlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = pierceperlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = chopperlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = pickaxeperlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = fireperlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = frostperlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = lightningperlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = poisonperlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = spiritperlight.Value;
-            lightning_dagger.ItemDrop.m_itemData.m_shared.m_attackForce = attackforcelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_damage = daggerdamagelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_blunt = daggerbluntlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_toolTier = daggertierlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_slash = daggerslashvallight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pierce = daggerpiercelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_chop = daggerchoplight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_pickaxe = daggerpickaxelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_fire = daggerfirelight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_frost = daggerfrostlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_lightning = daggerlightninglight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_poison = daggerpoisonlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damages.m_spirit = daggerspiritlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_damage = daggerdamageperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_blunt = daggerbluntperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_slash = daggerslashperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pierce = daggerpierceperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_chop = daggerchopperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_pickaxe = daggerpickaxeperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = daggerfireperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_frost = daggerfrostperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_lightning = daggerlightningperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_poison = daggerpoisonperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_damagesPerLevel.m_spirit = daggerspiritperlight.Value;
+            lightning_dagger.ItemDrop.m_itemData.m_shared.m_attackForce = daggerattackforcelight.Value;
             lightning_dagger.ItemDrop.m_itemData.m_shared.m_hitEffect = effecthit;
             lightning_dagger.ItemDrop.m_itemData.m_shared.m_blockEffect = effectblocked;
             lightning_dagger.ItemDrop.m_itemData.m_shared.m_triggerEffect = trigger;
@@ -1620,7 +1696,7 @@ namespace RuneSwords
             greattierfire = Config.Bind("Great Fire Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             greatattackforcefire = Config.Bind("Great Fire Sword", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
-            //great fire
+            //dagger fire
             daggerdamagefire = Config.Bind("Fire Dagger", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             daggerbluntfire = Config.Bind("Fire Dagger", "Blunt Damge", 0, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             daggerslashvalfire = Config.Bind("Fire Dagger", "Slash Damage", 300, new ConfigDescription("Slash Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
@@ -1681,34 +1757,63 @@ namespace RuneSwords
             tierlight = Config.Bind("Lightning Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             attackforcelight = Config.Bind("Lightning Sword", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             
+            //great Lightning
+            greatdamagelight = Config.Bind("Great Lightning Sword", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatbluntlight = Config.Bind("Great Lightning Sword", "Blunt Damge", 0, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatslashvallight = Config.Bind("Great Lightning Sword", "Slash Damage", 300, new ConfigDescription("Slash Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpiercelight = Config.Bind("Great Lightning Sword", "Pierce Damge", 135, new ConfigDescription("Pierce Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatchoplight = Config.Bind("Great Lightning Sword", "Chop Damage", 0, new ConfigDescription("Chop Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpickaxelight = Config.Bind("Great Lightning Sword", "PickAxe Damage", 0, new ConfigDescription("Pickaxe Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfirelight = Config.Bind("Great Lightning Sword", "Fire Damage", 0, new ConfigDescription("Fire Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfrostlight = Config.Bind("Great Lightning Sword", "Frost Damage", 0, new ConfigDescription("Frost Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatlightninglight = Config.Bind("Great Lightning Sword", "Lightning Damage", 250, new ConfigDescription("Lightning Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpoisonlight = Config.Bind("Great Lightning Sword", "Poison Damage", 0, new ConfigDescription("Poison Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatspiritlight = Config.Bind("Great Lightning Sword", "Spirit Damage", 100, new ConfigDescription("Spirit Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+            greatdamageperlight = Config.Bind("Great Lightning Sword", "Overall Damage Per Level", 50, new ConfigDescription("Overall Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatbluntperlight = Config.Bind("Great Lightning Sword", "Blunt Damage Per Level", 50, new ConfigDescription("Blunt Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatslashperlight = Config.Bind("Great Lightning Sword", "Slash Damage Per Level", 50, new ConfigDescription("Slash Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpierceperlight = Config.Bind("Great Lightning Sword", "Pierce Damage Per Level", 50, new ConfigDescription("Pierce Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatchopperlight = Config.Bind("Great Lightning Sword", "Chop Damage Per Level", 50, new ConfigDescription("Chop Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpickaxeperlight = Config.Bind("Great Lightning Sword", "PickAxe Damage Per Level", 50, new ConfigDescription("PickAxe Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfireperlight = Config.Bind("Great Lightning Sword", "Fire Damage Per Level", 50, new ConfigDescription("Fire Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfrostperlight = Config.Bind("Great Lightning Sword", "Frost Damage Per Level", 50, new ConfigDescription("Frost Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatlightningperlight = Config.Bind("Great Lightning Sword", "Lightning Damage Per Level", 50, new ConfigDescription("Lightning Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpoisonperlight = Config.Bind("Great Lightning Sword", "Poison Damage Per Level", 50, new ConfigDescription("Poison Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatspiritperlight = Config.Bind("Great Lightning Sword", "Spirit Damage Per Level", 50, new ConfigDescription("Spirit Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            greattierlight = Config.Bind("Great Lightning Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatattackforcelight = Config.Bind("Great Lightning Sword", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             
-            greatdamagelight = Config.Bind("Lightning Sword", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatbluntlight = Config.Bind("Lightning Sword", "Blunt Damge", 0, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatslashvallight = Config.Bind("Lightning Sword", "Slash Damage", 300, new ConfigDescription("Slash Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatpiercelight = Config.Bind("Lightning Sword", "Pierce Damge", 135, new ConfigDescription("Pierce Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatchoplight = Config.Bind("Lightning Sword", "Chop Damage", 0, new ConfigDescription("Chop Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatpickaxelight = Config.Bind("Lightning Sword", "PickAxe Damage", 0, new ConfigDescription("Pickaxe Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatfirelight = Config.Bind("Lightning Sword", "Fire Damage", 0, new ConfigDescription("Fire Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatfrostlight = Config.Bind("Lightning Sword", "Frost Damage", 0, new ConfigDescription("Frost Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatlightninglight = Config.Bind("Lightning Sword", "Lightning Damage", 250, new ConfigDescription("Lightning Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatpoisonlight = Config.Bind("Lightning Sword", "Poison Damage", 0, new ConfigDescription("Poison Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatspiritlight = Config.Bind("Lightning Sword", "Spirit Damage", 100, new ConfigDescription("Spirit Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            //dagger Lightning
+            daggerdamagelight = Config.Bind("Lightning Dagger", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerbluntlight = Config.Bind("Lightning Dagger", "Blunt Damge", 0, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerslashvallight = Config.Bind("Lightning Dagger", "Slash Damage", 300, new ConfigDescription("Slash Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpiercelight = Config.Bind("Lightning Dagger", "Pierce Damge", 135, new ConfigDescription("Pierce Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerchoplight = Config.Bind("Lightning Dagger", "Chop Damage", 0, new ConfigDescription("Chop Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpickaxelight = Config.Bind("Lightning Dagger", "PickAxe Damage", 0, new ConfigDescription("Pickaxe Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerfirelight = Config.Bind("Lightning Dagger", "Fire Damage", 0, new ConfigDescription("Fire Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerfrostlight = Config.Bind("Lightning Dagger", "Frost Damage", 0, new ConfigDescription("Frost Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerlightninglight = Config.Bind("Lightning Dagger", "Lightning Damage", 250, new ConfigDescription("Lightning Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpoisonlight = Config.Bind("Lightning Dagger", "Poison Damage", 0, new ConfigDescription("Poison Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerspiritlight = Config.Bind("Lightning Dagger", "Spirit Damage", 100, new ConfigDescription("Spirit Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
-            greatdamageperlight = Config.Bind("Lightning Sword", "Overall Damage Per Level", 50, new ConfigDescription("Overall Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatbluntperlight = Config.Bind("Lightning Sword", "Blunt Damage Per Level", 50, new ConfigDescription("Blunt Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatslashperlight = Config.Bind("Lightning Sword", "Slash Damage Per Level", 50, new ConfigDescription("Slash Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatpierceperlight = Config.Bind("Lightning Sword", "Pierce Damage Per Level", 50, new ConfigDescription("Pierce Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatchopperlight = Config.Bind("Lightning Sword", "Chop Damage Per Level", 50, new ConfigDescription("Chop Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatpickaxeperlight = Config.Bind("Lightning Sword", "PickAxe Damage Per Level", 50, new ConfigDescription("PickAxe Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatfireperlight = Config.Bind("Lightning Sword", "Fire Damage Per Level", 50, new ConfigDescription("Fire Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatfrostperlight = Config.Bind("Lightning Sword", "Frost Damage Per Level", 50, new ConfigDescription("Frost Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatlightningperlight = Config.Bind("Lightning Sword", "Lightning Damage Per Level", 50, new ConfigDescription("Lightning Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatpoisonperlight = Config.Bind("Lightning Sword", "Poison Damage Per Level", 50, new ConfigDescription("Poison Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatspiritperlight = Config.Bind("Lightning Sword", "Spirit Damage Per Level", 50, new ConfigDescription("Spirit Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerdamageperlight = Config.Bind("Lightning Dagger", "Overall Damage Per Level", 50, new ConfigDescription("Overall Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerbluntperlight = Config.Bind("Lightning Dagger", "Blunt Damage Per Level", 50, new ConfigDescription("Blunt Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerslashperlight = Config.Bind("Lightning Dagger", "Slash Damage Per Level", 50, new ConfigDescription("Slash Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpierceperlight = Config.Bind("Lightning Dagger", "Pierce Damage Per Level", 50, new ConfigDescription("Pierce Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerchopperlight = Config.Bind("Lightning Dagger", "Chop Damage Per Level", 50, new ConfigDescription("Chop Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpickaxeperlight = Config.Bind("Lightning Dagger", "PickAxe Damage Per Level", 50, new ConfigDescription("PickAxe Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerfireperlight = Config.Bind("Lightning Dagger", "Fire Damage Per Level", 50, new ConfigDescription("Fire Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerfrostperlight = Config.Bind("Lightning Dagger", "Frost Damage Per Level", 50, new ConfigDescription("Frost Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerlightningperlight = Config.Bind("Lightning Dagger", "Lightning Damage Per Level", 50, new ConfigDescription("Lightning Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpoisonperlight = Config.Bind("Lightning Dagger", "Poison Damage Per Level", 50, new ConfigDescription("Poison Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerspiritperlight = Config.Bind("Lightning Dagger", "Spirit Damage Per Level", 50, new ConfigDescription("Spirit Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
 
-            greattierlight = Config.Bind("Lightning Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatattackforcelight = Config.Bind("Lightning Sword", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggertierlight = Config.Bind("Lightning Dagger", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerattackforcelight = Config.Bind("Lightning Dagger", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
             //damage for poison
             damageposion = Config.Bind("Poison Sword", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
@@ -1740,34 +1845,66 @@ namespace RuneSwords
             tierposion = Config.Bind("Poison Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             attackforceposion = Config.Bind("Poison Sword", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
-            greatdamageposion = Config.Bind("Poison Sword", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatbluntposion = Config.Bind("Poison Sword", "Blunt Damge", 0, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatslashvalposion = Config.Bind("Poison Sword", "Slash Damage", 300, new ConfigDescription("Slash Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatpierceposion = Config.Bind("Poison Sword", "Pierce Damge", 135, new ConfigDescription("Pierce Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatchopposion = Config.Bind("Poison Sword", "Chop Damage", 0, new ConfigDescription("Chop Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatpickaxeposion = Config.Bind("Poison Sword", "PickAxe Damage", 0, new ConfigDescription("Pickaxe Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatfireposion = Config.Bind("Poison Sword", "Fire Damage", 0, new ConfigDescription("Fire Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatfrostposion = Config.Bind("Poison Sword", "Frost Damage", 0, new ConfigDescription("Frost Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatlightningposion = Config.Bind("Poison Sword", "Lightning Damage", 0, new ConfigDescription("Lightning Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatpoisonposion = Config.Bind("Poison Sword", "Poison Damage", 250, new ConfigDescription("Poison Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatspiritposion = Config.Bind("Poison Sword", "Spirit Damage", 100, new ConfigDescription("Spirit Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+            //great poison (lelz any my spelling btw)
+            greatdamageposion = Config.Bind("Great Poison Sword", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatbluntposion = Config.Bind("Great Poison Sword", "Blunt Damge", 0, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatslashvalposion = Config.Bind("Great Poison Sword", "Slash Damage", 300, new ConfigDescription("Slash Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpierceposion = Config.Bind("Great Poison Sword", "Pierce Damge", 135, new ConfigDescription("Pierce Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatchopposion = Config.Bind("Great Poison Sword", "Chop Damage", 0, new ConfigDescription("Chop Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpickaxeposion = Config.Bind("Great Poison Sword", "PickAxe Damage", 0, new ConfigDescription("Pickaxe Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfireposion = Config.Bind("Great Poison Sword", "Fire Damage", 0, new ConfigDescription("Fire Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfrostposion = Config.Bind("Great Poison Sword", "Frost Damage", 0, new ConfigDescription("Frost Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatlightningposion = Config.Bind("Great Poison Sword", "Lightning Damage", 0, new ConfigDescription("Lightning Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpoisonposion = Config.Bind("Great Poison Sword", "Poison Damage", 250, new ConfigDescription("Poison Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatspiritposion = Config.Bind("Great Poison Sword", "Spirit Damage", 100, new ConfigDescription("Spirit Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
 
-            greatdamageperposion = Config.Bind("Poison Sword", "Overall Damage Per Level", 50, new ConfigDescription("Overall Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatbluntperposion = Config.Bind("Poison Sword", "Blunt Damage Per Level", 50, new ConfigDescription("Blunt Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatslashperposion = Config.Bind("Poison Sword", "Slash Damage Per Level", 50, new ConfigDescription("Slash Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatpierceperposion = Config.Bind("Poison Sword", "Pierce Damage Per Level", 50, new ConfigDescription("Pierce Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatchopperposion = Config.Bind("Poison Sword", "Chop Damage Per Level", 50, new ConfigDescription("Chop Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatpickaxeperposion = Config.Bind("Poison Sword", "PickAxe Damage Per Level", 50, new ConfigDescription("PickAxe Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatfireperposion = Config.Bind("Poison Sword", "Fire Damage Per Level", 50, new ConfigDescription("Fire Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatfrostperposion = Config.Bind("Poison Sword", "Frost Damage Per Level", 50, new ConfigDescription("Frost Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatlightningperposion = Config.Bind("Poison Sword", "Lightning Damage Per Level", 50, new ConfigDescription("Lightning Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatpoisonperposion = Config.Bind("Poison Sword", "Poison Damage Per Level", 50, new ConfigDescription("Poison Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatspiritperposion = Config.Bind("Poison Sword", "Spirit Damage Per Level", 50, new ConfigDescription("Spirit Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatdamageperposion = Config.Bind("Great Poison Sword", "Overall Damage Per Level", 50, new ConfigDescription("Overall Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatbluntperposion = Config.Bind("Great Poison Sword", "Blunt Damage Per Level", 50, new ConfigDescription("Blunt Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatslashperposion = Config.Bind("Great Poison Sword", "Slash Damage Per Level", 50, new ConfigDescription("Slash Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpierceperposion = Config.Bind("Great Poison Sword", "Pierce Damage Per Level", 50, new ConfigDescription("Pierce Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatchopperposion = Config.Bind("Great Poison Sword", "Chop Damage Per Level", 50, new ConfigDescription("Chop Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpickaxeperposion = Config.Bind("Great Poison Sword", "PickAxe Damage Per Level", 50, new ConfigDescription("PickAxe Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfireperposion = Config.Bind("Great Poison Sword", "Fire Damage Per Level", 50, new ConfigDescription("Fire Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatfrostperposion = Config.Bind("Great Poison Sword", "Frost Damage Per Level", 50, new ConfigDescription("Frost Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatlightningperposion = Config.Bind("Great Poison Sword", "Lightning Damage Per Level", 50, new ConfigDescription("Lightning Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatpoisonperposion = Config.Bind("Great Poison Sword", "Poison Damage Per Level", 50, new ConfigDescription("Poison Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatspiritperposion = Config.Bind("Great Poison Sword", "Spirit Damage Per Level", 50, new ConfigDescription("Spirit Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
 
-            greattierposion = Config.Bind("Poison Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
-            greatattackforceposion = Config.Bind("Poison Sword", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greattierposion = Config.Bind("Great Poison Sword", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            greatattackforceposion = Config.Bind("Great Poison Sword", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+            //dagger poison (lelz any my spelling btw)
+            daggerdamageposion = Config.Bind("Poison Dagger", "Overall Damage", 0, new ConfigDescription("Overall Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerbluntposion = Config.Bind("Poison Dagger", "Blunt Damge", 0, new ConfigDescription("Blunt Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerslashvalposion = Config.Bind("Poison Dagger", "Slash Damage", 300, new ConfigDescription("Slash Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpierceposion = Config.Bind("Poison Dagger", "Pierce Damge", 135, new ConfigDescription("Pierce Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerchopposion = Config.Bind("Poison Dagger", "Chop Damage", 0, new ConfigDescription("Chop Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpickaxeposion = Config.Bind("Poison Dagger", "PickAxe Damage", 0, new ConfigDescription("Pickaxe Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerfireposion = Config.Bind("Poison Dagger", "Fire Damage", 0, new ConfigDescription("Fire Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerfrostposion = Config.Bind("Poison Dagger", "Frost Damage", 0, new ConfigDescription("Frost Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerlightningposion = Config.Bind("Poison Dagger", "Lightning Damage", 0, new ConfigDescription("Lightning Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpoisonposion = Config.Bind("Poison Dagger", "Poison Damage", 250, new ConfigDescription("Poison Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerspiritposion = Config.Bind("Poison Dagger", "Spirit Damage", 100, new ConfigDescription("Spirit Damage", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            daggerdamageperposion = Config.Bind("Poison Dagger", "Overall Damage Per Level", 50, new ConfigDescription("Overall Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerbluntperposion = Config.Bind("Poison Dagger", "Blunt Damage Per Level", 50, new ConfigDescription("Blunt Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerslashperposion = Config.Bind("Poison Dagger", "Slash Damage Per Level", 50, new ConfigDescription("Slash Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpierceperposion = Config.Bind("Poison Dagger", "Pierce Damage Per Level", 50, new ConfigDescription("Pierce Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerchopperposion = Config.Bind("Poison Dagger", "Chop Damage Per Level", 50, new ConfigDescription("Chop Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpickaxeperposion = Config.Bind("Poison Dagger", "PickAxe Damage Per Level", 50, new ConfigDescription("PickAxe Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerfireperposion = Config.Bind("Poison Dagger", "Fire Damage Per Level", 50, new ConfigDescription("Fire Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerfrostperposion = Config.Bind("Poison Dagger", "Frost Damage Per Level", 50, new ConfigDescription("Frost Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerlightningperposion = Config.Bind("Poison Dagger", "Lightning Damage Per Level", 50, new ConfigDescription("Lightning Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerpoisonperposion = Config.Bind("Poison Dagger", "Poison Damage Per Level", 50, new ConfigDescription("Poison Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerspiritperposion = Config.Bind("Poison Dagger", "Spirit Damage Per Level", 50, new ConfigDescription("Spirit Damage per level", new AcceptableValueRange<int>(0, 2500), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+
+            daggertierposion = Config.Bind("Poison Dagger", "Tool Tier", 5, new ConfigDescription("Tool Tier", new AcceptableValueRange<int>(0, 10), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            daggerattackforceposion = Config.Bind("Poison Dagger", "Attack Force", 90, new ConfigDescription("Attack Force", new AcceptableValueRange<int>(0, 100), null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
         }
 
