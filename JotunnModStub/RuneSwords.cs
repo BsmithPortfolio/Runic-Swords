@@ -1151,12 +1151,12 @@ namespace RuneSwords
 
         public void FireDagger()
         {
-            firedagger = runeassets.LoadAsset<GameObject>("FireRuneSword");
+            firedagger = runeassets.LoadAsset<GameObject>("FireRuneDagger");
             fire_dagger = new CustomItem(firedagger, fixReference: true,
                 new ItemConfig
                 {
                     Amount = 1,
-                    Name = "Runic Fire Sword",
+                    Name = "Runic Fire Dagger",
                     Enabled = FireEnable.Value,
                     CraftingStation = "piece_artisanstation",
                     RepairStation = "piece_artisanstation",
