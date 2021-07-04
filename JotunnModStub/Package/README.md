@@ -34,7 +34,14 @@ Change config sync to work better
 **V0.0.8**
 Hotpatch to fix some errors with 0.0.7
 
+**V0.0.9**
+It is now Runic blades.. 2h and dagger editions now included with configs lots of you asked for these 
+
+**V0.1.0**
+Config sync events apply on save rather than logout/login
+
 These swords were meant for more "hard" servers yes the crafting reqs are alot yes they are OP no I wont turn them down 
 
 TLDR 
 Have fun destroying things with god weapons
+

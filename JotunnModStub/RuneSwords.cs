@@ -17,7 +17,7 @@ namespace RuneSwords
 {
     [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
     [BepInDependency(Jotunn.Main.ModGuid)]
-    [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
+    [NetworkCompatibility(CompatibilityLevel.OnlySyncWhenInstalled, VersionStrictness.Minor)]
     internal class RuneSwords : BaseUnityPlugin
     {
         public const string PluginGUID = "com.zarboz.runicswords";
