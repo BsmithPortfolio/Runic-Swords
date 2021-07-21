@@ -9,3 +9,6 @@ Thnks Jotunn for the heavy lifting I just made some assets ;)
 
 
 These are paid assets and I own the rights to them therefore they will not be distributed in any other fashion than the mod .dll file
+
+
+You are not to redistribute this mod without express written permission
